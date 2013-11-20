@@ -1,0 +1,77 @@
+[
+	{
+		"id": "1",
+		"name": "Tyrra",
+		"type": "Dragon",
+		"subtype": "",
+		"element": "Fire",
+		"subelement": "",
+		"rarity": 2,
+		"cost": 2,
+		"max": 5,
+		"hp": 490,
+		"atk": 231,
+		"rcv": 50
+		"evolution chart":
+			[
+				{ "id": "1", "name": "Tyrra" },
+				{ "id": "2", "name": "Tyran" },
+				{ "id": "xxx", "name": "xxx" },				
+				{ "id": "xxx", "name": "xxx" }
+			],
+		"evolution materials":
+			[
+				{ "id": "152", "name": "Dragon Seed" },
+			]
+	}
+	{
+		"id": "2",
+		"name": "Tyran",
+		"type": "Dragon",
+		"element": "Fire",
+		"rarity": xxx,
+		"cost": xxx,
+		"max": xxx,
+		"evolution chart":
+			[
+				{ "id": "xxx", "name": "xxx" },
+				{ "id": "xxx", "name": "xxx" },
+				{ "id": "xxx", "name": "xxx" },				
+				{ "id": "xxx", "name": "xxx" }
+			],
+		"evolution materials":
+			[
+				{ "id": "xxx", "name": "xxx" },
+				{ "id": "xxx", "name": "xxx" },
+				{ "id": "xxx", "name": "xxx" },
+				{ "id": "xxx", "name": "xxx" },
+				{ "id": "xxx", "name": "xxx" },
+			]
+	}
+	{
+		"id": "233",
+		"name": "Chaos Dragon Knight",
+		"type": "Dragon",
+		"element": "Dark",
+		"rarity": 5,
+		"cost": 14,
+		"max": 99,
+		"evolution chart":
+			[
+				{ "id": "108", "name": "Mystic Dark Knight" },
+				{ "id": "109", "name": "Dark Dragon Knight" },
+				{ "id": "233", "name": "Chaos Dragon Knight" },				
+				{ "id": "826", "name": "Chaos Dragon Knight Voice" }
+			],
+		"evolution materials":
+			[
+				{ "id": "151", "name": "Keeper of Dark" },
+				{ "id": "321", "name": "Keeper of Rainbow" },
+				{ "id": "227", "name": "Dragon Fruit" },
+				{ "id": "250", "name": "Dub-amelit" },
+				{ "id": "251", "name": "Dub-mythlit" },
+			]
+	}
+]
+
+//http://adobe.github.io/Spry/samples/data_region/JSONDataSetSample.html
