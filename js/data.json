@@ -11,13 +11,14 @@
 		"max": 5,
 		"hp": 490,
 		"atk": 231,
-		"rcv": 50
+		"rcv": 50,
 		"evolution chart":
 			[
 				{ "id": "1", "name": "Tyrra" },
 				{ "id": "2", "name": "Tyran" },
-				{ "id": "xxx", "name": "xxx" },				
-				{ "id": "xxx", "name": "xxx" }
+				{ "id": "3", "name": "Tyrannos" },				
+				{ "id": "4", "name": "Firedragon Tyrannos" }
+				{ "id": "480", "name": "Firedragon Grand Tyrannos" }
 			],
 		"evolution materials":
 			[
@@ -28,10 +29,215 @@
 		"id": "2",
 		"name": "Tyran",
 		"type": "Dragon",
+		"subtype": "",
 		"element": "Fire",
+		"subelement": "",
+		"rarity": 3,
+		"cost": 4,
+		"max": 15,
+		"hp": 490,
+		"atk": 231,
+		"rcv": 50,
+		"evolution chart":
+			[
+				{ "id": "1", "name": "Tyrra" },
+				{ "id": "2", "name": "Tyran" },
+				{ "id": "3", "name": "Tyrannos" },				
+				{ "id": "4", "name": "Firedragon Tyrannos" }
+				{ "id": "480", "name": "Firedragon Grand Tyrannos" }
+			],
+		"evolution materials":
+			[
+				{ "id": "153", "name": "Dragon Plant" },
+				{ "id": "155", "name": "Rubylit" },
+			]
+	}
+	{
+		"id": "3",
+		"name": "Tyrannos",
+		"type": "Dragon",
+		"subtype": "",
+		"element": "Fire",
+		"subelement": "",
+		"rarity": 4,
+		"cost": 6,
+		"max": 35,
+		"hp": 971,
+		"atk": 508,
+		"rcv": 111,
+		"evolution chart":
+			[
+				{ "id": "1", "name": "Tyrra" },
+				{ "id": "2", "name": "Tyran" },
+				{ "id": "3", "name": "Tyrannos" },				
+				{ "id": "4", "name": "Firedragon Tyrannos" }
+				{ "id": "480", "name": "Firedragon Grand Tyrannos" }
+			],
+		"evolution materials":
+			[
+				{ "id": "154", "name": "Dragon Flower" },
+				{ "id": "153", "name": "Dragon Plant" },
+				{ "id": "152", "name": "Dragon Seed" },
+				{ "id": "155", "name": "Rubylit" },
+				{ "id": "147", "name": "Keeper of Flame" },
+			]
+	}
+	{
+		"id": "4",
+		"name": "Firedragon Tyrannos",
+		"type": "Dragon",
+		"subtype": "",
+		"element": "Fire",
+		"subelement": "",
+		"rarity": 5,
+		"cost": 10,
+		"max": 99,
+		"hp": 2145,
+		"atk": 1114,
+		"rcv": 231,
+		"evolution chart":
+			[
+				{ "id": "1", "name": "Tyrra" },
+				{ "id": "2", "name": "Tyran" },
+				{ "id": "3", "name": "Tyrannos" },				
+				{ "id": "4", "name": "Firedragon Tyrannos" }
+				{ "id": "480", "name": "Firedragon Grand Tyrannos" }
+			],
+		"evolution materials":
+			[
+				{ "id": "251", "name": "Dub-mythlit" },
+				{ "id": "234", "name": "Mystic Mask" },
+				{ "id": "321", "name": "Keeper of Rainbow" },
+				{ "id": "321", "name": "Keeper of Rainbow" },
+				{ "id": "227", "name": "Dragon Fruit" },
+			]
+	}
+	{
+		"id": "5",
+		"name": "Plessie",
+		"type": "Dragon",
+		"subtype": "",
+		"element": "Water",
+		"subelement": "",
+		"rarity": 2,
+		"cost": 2,
+		"max": 5,
+		"hp": 155,
+		"atk": 62,
+		"rcv": 18,
+		"evolution chart":
+			[
+				{ "id": "5", "name": "Plessie" },
+				{ "id": "6", "name": "Plesiel" },
+				{ "id": "7", "name": "Plesios" },				
+				{ "id": "8", "name": "Icedragon Plesios" }
+				{ "id": "481", "name": "Icedragon Depth Plesios" }
+			],
+		"evolution materials":
+			[
+				{ "id": "152", "name": "Dragon Seed" },
+			]
+	}
+	{
+		"id": "6",
+		"name": "Plesiel",
+		"type": "Dragon",
+		"subtype": "",
+		"element": "Water",
+		"subelement": "",
+		"rarity": 3,
+		"cost": 4,
+		"max": 15,
+		"hp": 518,
+		"atk": 210,
+		"rcv": 60,
+		"evolution chart":
+			[
+				{ "id": "5", "name": "Plessie" },
+				{ "id": "6", "name": "Plesiel" },
+				{ "id": "7", "name": "Plesios" },				
+				{ "id": "8", "name": "Icedragon Plesios" }
+				{ "id": "481", "name": "Icedragon Depth Plesios" }
+			],
+		"evolution materials":
+			[
+				{ "id": "153", "name": "Dragon Plant" },
+				{ "id": "156", "name": "Sapphilit" },
+			]
+	}
+	{
+		"id": "7",
+		"name": "Plesios",
+		"type": "Dragon",
+		"subtype": "",
+		"element": "Water",
+		"subelement": "",
+		"rarity": 4,
+		"cost": 6,
+		"max": 35,
+		"hp": 998,
+		"atk": 477,
+		"rcv": 128,
+		"evolution chart":
+			[
+				{ "id": "5", "name": "Plessie" },
+				{ "id": "6", "name": "Plesiel" },
+				{ "id": "7", "name": "Plesios" },				
+				{ "id": "8", "name": "Icedragon Plesios" }
+				{ "id": "481", "name": "Icedragon Depth Plesios" }
+			],
+		"evolution materials":
+			[
+				{ "id": "154", "name": "Dragon Flower" },
+				{ "id": "153", "name": "Dragon Plant" },
+				{ "id": "152", "name": "Dragon Seed" },
+				{ "id": "156", "name": "Sapphilit" },
+				{ "id": "148", "name": "Keeper of Water" },
+			]
+	}
+	{
+		"id": "8",
+		"name": "Icedragon Plesios",
+		"type": "Dragon",
+		"subtype": "",
+		"element": "Water",
+		"subelement": "",
+		"rarity": 5,
+		"cost": 10,
+		"max": 99,
+		"hp": 2195,
+		"atk": 1056,
+		"rcv": 264,
+		"evolution chart":
+			[
+				{ "id": "5", "name": "Plessie" },
+				{ "id": "6", "name": "Plesiel" },
+				{ "id": "7", "name": "Plesios" },				
+				{ "id": "8", "name": "Icedragon Plesios" }
+				{ "id": "481", "name": "Icedragon Depth Plesios" }
+			],
+		"evolution materials":
+			[
+				{ "id": "251", "name": "Dub-mythlit" },
+				{ "id": "234", "name": "Mystic Mask" },
+				{ "id": "321", "name": "Keeper of Rainbow" },
+				{ "id": "321", "name": "Keeper of Rainbow" },
+				{ "id": "227", "name": "Dragon Fruit" },
+			]
+	}
+	{
+		"id": "xxx",
+		"name": "xxx",
+		"type": "xxx",
+		"subtype": "xxx",
+		"element": "xxx",
+		"subelement": "xxx",
 		"rarity": xxx,
 		"cost": xxx,
 		"max": xxx,
+		"hp": xxx,
+		"atk": xxx,
+		"rcv": xxx,
 		"evolution chart":
 			[
 				{ "id": "xxx", "name": "xxx" },
@@ -45,31 +251,34 @@
 				{ "id": "xxx", "name": "xxx" },
 				{ "id": "xxx", "name": "xxx" },
 				{ "id": "xxx", "name": "xxx" },
-				{ "id": "xxx", "name": "xxx" },
 			]
 	}
 	{
-		"id": "233",
-		"name": "Chaos Dragon Knight",
-		"type": "Dragon",
-		"element": "Dark",
-		"rarity": 5,
-		"cost": 14,
-		"max": 99,
+		"id": "xxx",
+		"name": "xxx",
+		"type": "xxx",
+		"subtype": "xxx",
+		"element": "xxx",
+		"subelement": "xxx",
+		"rarity": xxx,
+		"cost": xxx,
+		"max": xxx,
+		"hp": xxx,
+		"atk": xxx,
+		"rcv": xxx,
 		"evolution chart":
 			[
-				{ "id": "108", "name": "Mystic Dark Knight" },
-				{ "id": "109", "name": "Dark Dragon Knight" },
-				{ "id": "233", "name": "Chaos Dragon Knight" },				
-				{ "id": "826", "name": "Chaos Dragon Knight Voice" }
+				{ "id": "xxx", "name": "xxx" },
+				{ "id": "xxx", "name": "xxx" },
+				{ "id": "xxx", "name": "xxx" },				
+				{ "id": "xxx", "name": "xxx" }
 			],
 		"evolution materials":
 			[
-				{ "id": "151", "name": "Keeper of Dark" },
-				{ "id": "321", "name": "Keeper of Rainbow" },
-				{ "id": "227", "name": "Dragon Fruit" },
-				{ "id": "250", "name": "Dub-amelit" },
-				{ "id": "251", "name": "Dub-mythlit" },
+				{ "id": "xxx", "name": "xxx" },
+				{ "id": "xxx", "name": "xxx" },
+				{ "id": "xxx", "name": "xxx" },
+				{ "id": "xxx", "name": "xxx" },
 			]
 	}
 ]
