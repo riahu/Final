@@ -1,0 +1,34 @@
+Evolution Material Tracker
+
+So here's a template for our JSON file:
+
+[
+	{
+		"id": "233",
+		"name": "Chaos Dragon Knight",
+		"type": "Dragon",
+		"element": "Dark",
+		"rarity": 5,
+		"cost": 14,
+		"max": 99,
+		"evolution chart":
+			[
+				{ "id": "108", "name": "Mystic Dark Knight" },
+				{ "id": "109", "name": "Dark Dragon Knight" },
+				{ "id": "233", "name": "Chaos Dragon Knight" },				
+				{ "id": "826", "name": "Chaos Dragon Knight Voice" }
+			],
+		"evolution materials":
+			[
+				{ "id": "151", "type": "Keeper of Dark" },
+				{ "id": "321", "type": "Keeper of Rainbow" },
+				{ "id": "227", "type": "Dragon Fruit" },
+				{ "id": "250", "type": "Dub-amelit" },
+				{ "id": "251", "type": "Dub-mythlit" },
+			]
+	}
+]
+
+evolution materials is what we're aiming for here.
+
+By selecting a monster (via search, id number... not sure what we wanna do with that exactly... search seems like it's hard but pretty cool), people should be able to 'check' yes to them and add all of the evolution materials to a cart. checkout should aggregate everything, so you have nice list of stuff.
