@@ -174,3 +174,11 @@ h3 {
 @media(min-width:1200px) {
 
 }
+
+.crop{
+	width:200px; height:200px;
+}
+
+.crop img{
+	width:100%;
+}
