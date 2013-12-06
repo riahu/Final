@@ -1,34 +1,233 @@
-Evolution Material Tracker
+<!doctype html>
+<html>
+	<!--Evolution Material Tracker
 
-So here's a template for our JSON file:
+	On any monster information page for a monster which requires evolution materials, people should be able to click a button to add it to a cart.
 
-[
-	{
-		"id": "233",
-		"name": "Chaos Dragon Knight",
-		"type": "Dragon",
-		"element": "Dark",
-		"rarity": 5,
-		"cost": 14,
-		"max": 99,
-		"evolution chart":
-			[
-				{ "id": "108", "name": "Mystic Dark Knight" },
-				{ "id": "109", "name": "Dark Dragon Knight" },
-				{ "id": "233", "name": "Chaos Dragon Knight" },				
-				{ "id": "826", "name": "Chaos Dragon Knight Voice" }
-			],
-		"evolution materials":
-			[
-				{ "id": "151", "type": "Keeper of Dark" },
-				{ "id": "321", "type": "Keeper of Rainbow" },
-				{ "id": "227", "type": "Dragon Fruit" },
-				{ "id": "250", "type": "Dub-amelit" },
-				{ "id": "251", "type": "Dub-mythlit" },
-			]
-	}
-]
+	This page should be a checkout page which aggregates all of the materials required for the monsters in the cart, so you have nice list of stuff that you need to evolve the monsters in the cart.
 
-evolution materials is what we're aiming for here.
+	A nice touch would be to add a checkbox on each material in the cart to take it out of the total cost. That way people will be able to use this page to really keep track of what they still need to get in order to evolve their monsters.
 
-By selecting a monster (via search, id number... not sure what we wanna do with that exactly... search seems like it's hard but pretty cool), people should be able to 'check' yes to them and add all of the evolution materials to a cart. checkout should aggregate everything, so you have nice list of stuff.
+
+	Desktop Version:
+	_________________________________________________________________
+				
+				[Small Logo][     Search Bar        ]
+				_____________________________________   (end header)
+				
+				Your cart:
+				Base    Materials                  Result
+				 ___     ___  ___  ___               ___
+				|___|   |___||___||___|             |___|
+				 ___     ___  ___  ___  ___  ___     ___
+				|___|   |___||___||___||___||___|   |___|
+				 ___     ___  ___  ___  ___  ___     ___
+				|___|   |___||___||___||___||___|   |___|
+				_________________________________________
+				Total Materials Needed:
+				 ___
+				|___| x 3
+				 ___
+				|___| x 3
+				 ___
+				|___| x 2
+				 ___
+				|___| x 1
+				 ___
+				|___| x 1
+				 ___
+				|___| x 1
+				 ___
+				|___| x 1
+				 ___
+				|___| x 1
+				
+	_________________________________________________________________
+
+
+
+	Mobile Version:
+	_________________________________________________________________
+				 ___________________________________
+				|                                   |
+				|        A logo of some kind        |
+				|___________________________________|
+				[             Search Bar            ]
+				_____________________________________   (end header)
+				
+				Your cart:
+				Base                           Result
+				 _______     ___________     _______
+				|       |   | Button to |   |       |	(each monster in the cart should have a
+				|       |   | see a list|   |       |	 collapsible list of required materials)
+				|_______|   |__of_mats__|   |_______|
+				
+				_____________________________________
+				
+				 _______     ___________     _______
+				|       |   | Button to |   |       |
+				|       |   | close the |   |       |
+				|_______|   |___list____|   |_______|
+				  _______      _______      _______
+				 |       |    |       |    |       |
+				 |  mat  |    |  mat  |    |  mat  |
+				 |_______|    |_______|    |_______|
+						 _______      _______
+						|       |    |       |
+						|  mat  |    |  mat  |
+						|_______|    |_______|
+
+				______________________________________
+				
+				 _______     ___________     _______
+				|       |   | Button to |   |       |
+				|       |   | see a list|   |       |
+				|_______|   |__of_mats__|   |_______|
+				
+				_________________________________________
+				Total Materials Needed:
+				 _______
+				|       |
+				|       |       x   3
+				|_______|
+				 _______
+				|       |
+				|       |       x   3
+				|_______|
+				 _______
+				|       |
+				|       |       x   2
+				|_______|
+				 _______
+				|       |
+				|       |       x   1
+				|_______|
+				 _______
+				|       |
+				|       |       x   1
+				|_______|
+				 _______
+				|       |
+				|       |       x   1
+				|_______|
+				 _______
+				|       |
+				|       |       x   1
+				|_______|
+				 _______
+				|       |
+				|       |       x   1
+				|_______|
+				
+	_________________________________________________________________
+	-->
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/styles.css">
+		<title>Evo Mat Tracker</title>
+	</head>
+	<body>
+		<div class="container">
+			<div class="cart">
+				<div class="template cart-item well well-lg">
+					<div class="row">
+						<div class="col col-xs-4 col-sm-2"><div class="monster-icon" style="background-image: url(img/110.png)"></div></div>
+						<div class="col col-xs-4 col-sm-2 col-xs-push-4 col-sm-push-8"><div class="monster-icon" style="background-image: url(img/111.png)"></div></div>
+						<div class="col col-xs-4 col-xs-pull-4 visible-xs col-stack mat-toggle" data-toggle="collapse" data-target="#materials">
+							<div class="stack stack-1">
+								<div class="col-inner">
+									<a href="#">
+											Click to hide/show materials
+									</a>
+								</div>
+							</div>
+						</div>
+						<div class="clearfix visible-xs"></div>
+						<div class="col col-sm-8 col-xs-12 col-sm-pull-2">
+							<div class="collapse row materials" id="materials">
+								<div class="col col-sm-1 hidden-xs"></div>
+								<div class="col col-sm-6 col-xs-12">
+									<div class="row">
+										<div class="col col-xs-4">
+											<div class="monster-icon" style="background-image: url(img/170.png)"></div>
+										</div>
+										<div class="col col-xs-4">
+											<div class="monster-icon" style="background-image: url(img/170.png)"></div>
+										</div>
+										<div class="col col-xs-4">
+											<div class="monster-icon" style="background-image: url(img/170.png)"></div>
+										</div>
+									</div>
+								</div>
+									<div class="clearfix visible-xs"></div>
+								<div class="col col-sm-4 col-xs-12">
+									<div class="row">
+										<div class="col col-xs-2 visible-xs"></div>
+										<div class="col col-xs-4 col-sm-6">
+											<div class="monster-icon" style="background-image: url(img/170.png)"></div>
+										</div>
+										<div class="col col-xs-4 col-sm-6">
+											<div class="monster-icon" style="background-image: url(img/159.png)"></div>
+										</div>
+										<div class="col col-xs-2 visible-xs"></div>
+									</div>
+								</div>
+								<div class="col col-sm-1 hidden-xs"></div>
+							</div>
+						</div>
+					</div>
+				</div> <!-- end template -->
+				<div class="template cart-item well well-lg">
+					<div class="row">
+						<div class="col col-xs-4 col-sm-2"><div class="monster-icon" style="background-image: url(img/93.png)"></div></div>
+						<div class="col col-xs-4 col-sm-2 col-xs-push-4 col-sm-push-8"><div class="monster-icon" style="background-image: url(img/203.png)"></div></div>
+						<div class="col col-xs-4 col-xs-pull-4 visible-xs mat-toggle" data-toggle="collapse" data-target="#materials1">
+							<a href="#">
+								<div class="col-inner">
+									Click to hide/show materials
+								</div>
+							</a>
+						</div>
+						<div class="clearfix visible-xs"></div>
+						<div class="col col-sm-8 col-xs-12 col-sm-pull-2">
+							<div class="collapse row materials" id="materials1">
+								<div class="col col-sm-1 hidden-xs"></div>
+								<div class="col col-sm-6 col-xs-12">
+									<div class="row">
+										<div class="col col-xs-4">
+											<div class="monster-icon" style="background-image: url(img/173.png)"></div>
+										</div>
+										<div class="col col-xs-4">
+											<div class="monster-icon" style="background-image: url(img/149.png)"></div>
+										</div>
+										<div class="col col-xs-4">
+											<div class="monster-icon" style="background-image: url(img/160.png)"></div>
+										</div>
+									</div>
+								</div>
+									<div class="clearfix visible-xs"></div>
+								<div class="col col-sm-4 col-xs-12">
+									<div class="row">
+										<div class="col col-xs-2 visible-xs"></div>
+										<div class="col col-xs-4 col-sm-6">
+											<div class="monster-icon" style="background-image: url(img/157.png)"></div>
+										</div>
+										<div class="col col-xs-4 col-sm-6">
+											<div class="monster-icon" style="background-image: url(img/157.png)"></div>
+										</div>
+										<div class="col col-xs-2 visible-xs"></div>
+									</div>
+								</div>
+								<div class="col col-sm-1 hidden-xs"></div>
+							</div>
+						</div>
+					</div>
+				</div> <!-- end template -->
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+	</body>
+</html>
