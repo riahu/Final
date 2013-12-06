@@ -1,19 +1,49 @@
-HOMEPAGE
-(Please view this page in your favorite text editor, with one tab equivalent to 4 spaces)
+<!doctype html>
+<html>
+	<!-- HOMEPAGE
+	(Please view this page in your favorite text editor, with one tab equivalent to 4 spaces)
 
-Simple&Clean
-think of the google home page, including the i'm feeling lucky button (takes you to a random monster information page)
+	Simple&Clean
+	think of the google home page, including the i'm feeling lucky button (takes you to a random monster information page)
 
-Desktop/Mobile Version (Same layout)
-_________________________________________________________________
-             ___________________________________
-            |                                   |
-            |       A logo of some kind         |
-            |___________________________________|
-            
-            [           Search Bar              ]
-            [    Search     ]   [ Feeling Lucky ]
-            
-            [Not your first visit? See your cart]
-            
-_________________________________________________________________
+	Desktop/Mobile Version (Same layout)
+	_________________________________________________________________
+				 ___________________________________
+				|                                   |
+				|       A logo of some kind         |
+				|___________________________________|
+				
+				[           Search Bar              ]
+				[    Search     ]   [ Feeling Lucky ]
+				
+				[Not your first visit? See your cart]
+				
+	_________________________________________________________________ -->
+	<head>
+		<meta charset="utf-8">
+		<meta content="width=device-width, initial-scale=1.0" name="viewport">
+		<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/styles.css">
+		<title>Evo Mat Tracker</title>
+	</head>
+	<body>
+		<div class="index-container">
+			<div class="text-box">
+				<div class="text">
+					<div class="container">
+						<div class="logo logo-index"></div>
+						<form class="form-inline index-search" role="form">
+							<div class="form-group">
+								<input type="search" class="form-control" id="search" placeholder="Find a monster">
+							</div>
+							<button type="submit" class="btn btn-default">Search</button>
+							<button type="submit" class="btn btn-default">I'm feeling lucky</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
+	</body>
+</html>
