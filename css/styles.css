@@ -122,6 +122,10 @@ h3 {
 	background-position: center;
 }
 
+.icon-lg {
+	height: 200px;
+}
+
 .collapse {
 	display: block;
 }
@@ -160,6 +164,10 @@ h3 {
 	.logo-index {
 		width: 300px;
 		height: 200px;
+	}
+
+	.icon-lg {
+		height: 100px;
 	}
 
 	.index-search {
