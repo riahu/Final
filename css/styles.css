@@ -211,6 +211,10 @@ h3 {
 	}
 }
 
+.ctemp{
+	display:none;
+}
+
 @media(min-width:1200px) {
 	.sidebar{
 		width:300px;
