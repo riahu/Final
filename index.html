@@ -40,13 +40,23 @@
 		}*/
 		function populateSearch(data){
 			var results = document.querySelector(".searchResults");
+			results.innerHTML = "";
 			for(var i=0;i<data.list.length;i++){
 				var l = data.list[i];
 				var template = document.querySelector(".searchTemplate").cloneNode(true);
 				template.querySelector(".text").innerHTML = l.name;
-				template.querySelector(".monster-icon").style = "background-image: url(img/"+l.id+")";
+				template.querySelector(".monster-icon").style = "background-image: url(img/"+l.id+".png)";
+				template.className = template.className.replace("template" , "");
 				results.appendChild(template);
 			}
+			if(data.list.length){
+			document.getElementById("text-box").className = "text-box";
+			document.getElementById("text").className = "text";	
+			document.getElementById("indexPage").className = "index-container";	
+			}
+			document.getElementById("text-box").className = "";
+			document.getElementById("text").className = "";
+			document.getElementById("indexPage").className = "";	
 			
 		};
         
@@ -54,8 +64,8 @@
 	</head>
 	<body>
 		<div id="indexPage" class="index-container">
-			<div class="text-box">
-				<div class="text">
+			<div id="text-box" class="text-box">
+				<div id="text" class="text">
 					<div class="container">
 						<form class="form-inline index-search" action="#" role="form">
 							<div class="logo logo-index"></div>
