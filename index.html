@@ -42,7 +42,7 @@
 				var template = document.querySelector(".searchTemplate").cloneNode(true);
 				template.querySelector(".text").innerHTML = l.name;
 				//template.querySelector(".img-responsive").setAttribute("src","img/"+l.id+".png");
-				template.setAttribute("style","background-image: url(img/"+l.id+".png);");
+				template.querySelector(".monster-icon").setAttribute("style","background-image: url(img/"+l.id+".png);");
 				template.className = template.className.replace("template" , "");
 				results.appendChild(template);
 			}
@@ -61,6 +61,7 @@
 			getDetails(id,populateDetails);
 		}
 		function populateDetails(data){
+			
 			document.getElementById("indexPage").style = "display:none;";
 			document.getElementById("detailsPage").style = "";
 		}
@@ -85,8 +86,7 @@
 					<div class="template searchTemplate cart-item well well-lg">
 						<div class="row">
 							<div class="col col-xs-4 col-sm-2">
-								<div class="monster-icon">
-									<img class="img-responsive" src="img/203.png">
+								<div class="monster-icon">							
 								</div>
 							</div>
 							<div class="col col-xs-8 col-sm-10 col-xs-push-4 col-sm-push-2 col-stack">
@@ -109,7 +109,7 @@
         
         
         
-        	<div id="detailsPage" class="container">
+        	<div id="detailsPage" style="display:none;" class="container">
 
 		<nav class="navbar navbar-default" role="navigation">
 			<div class="navbar-header">
