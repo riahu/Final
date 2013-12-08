@@ -127,7 +127,12 @@ h3 {
 }
 
 .icon-full {
-	height: 200px;
+	display: block;
+	width: 100%;
+}
+
+.icon-full img {
+	width: 100%;
 }
 
 .collapse {
@@ -142,6 +147,7 @@ h3 {
 	text-align: center;
 	display: inline-block;
 	font-size: 150%;
+	height: 100px;
 }
 
 @media (max-width:400px) {
@@ -185,6 +191,10 @@ h3 {
 
 	.collapse {
 		display: none;
+	}
+	
+	.collapse .in {
+		display: block;
 	}
 
 	.materials {
