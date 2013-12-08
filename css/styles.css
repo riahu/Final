@@ -16,6 +16,11 @@ body {
 	padding: 20px;
 }
 
+h1, h2, h3 {
+	padding: 0;
+	margin: 5px 0px;
+}
+
 h2 {
 	font-weight: bold;
 	font-size: 150%;
@@ -39,7 +44,7 @@ h3 {
 
 .col {
 	margin: 0px;
-	padding: 0px;
+	padding: 0 5px;
 }
 
 .col-inner {
@@ -73,6 +78,9 @@ h3 {
 	height: 100%;
 	width: 100%;
 	display: table;
+	white-space: normal;
+	margin: 0;
+	padding: 0;
 }
 
 .text {
@@ -143,11 +151,15 @@ h3 {
 	border-top: none;
 }
 
-.mat-toggle{
-	text-align: center;
+.mat-toggle, .stats{
 	display: inline-block;
-	font-size: 150%;
 	height: 100px;
+	padding-top: 5px;
+	margin-top: 5px;
+}
+
+.evo .panel-body {
+	padding: 0;
 }
 
 @media (max-width:400px) {
@@ -191,10 +203,6 @@ h3 {
 
 	.collapse {
 		display: none;
-	}
-	
-	.collapse .in {
-		display: block;
 	}
 
 	.materials {
