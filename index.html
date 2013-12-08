@@ -40,7 +40,7 @@
 			for(var i=0;i<data.list.length;i++){
 				var l = data.list[i];
 				var template = document.querySelector(".searchTemplate").cloneNode(true);
-				template.querySelector(".text").innerHTML = l.name;
+				template.querySelector(".monster-name").innerHTML = l.name;
 				//template.querySelector(".img-responsive").setAttribute("src","img/"+l.id+".png");
 				template.querySelector(".monster-icon").setAttribute("style","background-image: url(img/"+l.id+".png);");
 				template.className = template.className.replace("template" , "");
@@ -83,23 +83,30 @@
 						</form>
                         <div class="searchResults">
                         </div>
-					<div class="template searchTemplate cart-item well well-lg">
-						<div class="row">
-							<div class="col col-xs-4 col-sm-2">
-								<div class="monster-icon">							
-								</div>
+						<div class="template searchTemplate panel panel-default">
+							<div class="panel-heading">
+								<h3 class="monster-name"></h3>
 							</div>
-							<div class="col col-xs-8 col-sm-10 col-xs-push-4 col-sm-push-2 col-stack">
-								<div class="stack stack-1">
-								<div class="text-box">
-									<div class="text">
-										Mystical Forest Pixie, Alraune
+							<div class="panel-body">
+								<div class="row">
+									<div class="col col-xs-4 col-sm-2">
+										<div class="monster-icon">							
+										</div>
+									</div>
+									<div class="col col-xs-8 col-sm-8 col-xs-push-4 col-sm-push-2 col-stack">
+										<div class="stack stack-1">
+											<div class="text-box">
+												<div class="text">
+													<div class="btn btn-info" id="details-button">
+														See Details
+													</div>
+												</div>
+											</div>
+										</div>
 									</div>
 								</div>
-								</div>
 							</div>
-						</div>
-					</div> <!-- end template -->
+						</div> <!-- end template -->
 					</div>
 				</div>
 			</div>
