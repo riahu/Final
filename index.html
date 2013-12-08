@@ -61,7 +61,13 @@
 			getDetails(id,populateDetails);
 		}
 		function populateDetails(data){
-			
+			document.getElementById("monsterName") = data.name;
+			document.getElementById("image1").setAttribute("src","full-img/"+data.id+".jpg");
+			document.getElementById("image2").setAttribute("src","full-img/"+data.id+".jpg");
+			document.querySelector(".hp-stat").innerHTML = data.hp;
+			document.querySelector(".atk-stat").innerHTML = data.atk;
+			document.querySelector(".rcv-stat").innerHTML = data.rcv;
+			document.getElementById("monster-icon").style = "background-image: url(img/"+data.id+");";
 			document.getElementById("indexPage").style = "display:none;";
 			document.getElementById("detailsPage").style = "";
 		}
@@ -148,16 +154,16 @@
 		<div class="row">
 			<div class="col col-sm-6 hidden-xs">
 				<div class="icon-full">
-					<img class="img-rounded" src="full-img/111.jpg">
+					<img class="img-rounded" id="image1" src="full-img/111.jpg">
 				</div>
 			</div>
 			<div class="col col-xs-12 col-sm-6">
-				<h2 class="focus-name">Vampire Lord</h2>
+				<h2 class="focus-name" id="monsterName">Vampire Lord</h2>
 				<br>
 				<div class="row">
 					<div class="col col-xs-12 visible-xs">
 						<div class="icon-full">
-							<img class="img-rounded" src="full-img/111.jpg">
+							<img class="img-rounded" id="image2" src="full-img/111.jpg">
 						</div>
 					</div>
 					<br>
@@ -175,7 +181,7 @@
 						</table>
 					</div>
 					<div class="col col-xs-4 col-xs-pull-8 col-sm-4 col-sm-push-0">
-						<div class="monster-icon" style="background-image: url(img/111.png)"></div>
+						<div class="monster-icon" id="monster-icon" style="background-image: url(img/111.png)"></div>
 					</div>
 				</div>
 			</div>
