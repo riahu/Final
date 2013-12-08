@@ -154,12 +154,14 @@ h3 {
 .mat-toggle, .stats{
 	display: inline-block;
 	height: 100px;
-	padding-top: 5px;
-	margin-top: 5px;
 }
 
 .evo .panel-body {
 	padding: 0;
+}
+
+.template {
+	display: none;
 }
 
 @media (max-width:400px) {
