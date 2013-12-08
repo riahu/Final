@@ -24,7 +24,7 @@ header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
 		$searchTerm = $_GET['q'];
 		if($by == "name"){
 			//$results = sqlsrv_query($conn, "SELECT id,name FROM monsters WHERE CONTAINS(".$by.",'".$searchTerm."');");
-			$results = sqlsrv_query($conn, "SELECT id,name FROM monsters WHERE ".$by."='".$searchTerm."';");
+			$results = sqlsrv_query($conn, "SELECT id,name FROM monsters WHERE ".$by." LIKE '%".$searchTerm."%';");
 		} else {
 			$results = sqlsrv_query($conn, "SELECT id,name FROM monsters WHERE ".$by."='".$searchTerm."';");
 		}
