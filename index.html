@@ -45,11 +45,11 @@
 				var l = data.list[i];
 				var template = document.querySelector(".searchTemplate").cloneNode(true);
 				template.querySelector(".text").innerHTML = l.name;
-				template.querySelector(".monster-icon").style = "background-image: url(img/"+l.id+".png)";
+				template.querySelector(".img-responsive").setAttribute("src","img/"+l.id+".png");
 				template.className = template.className.replace("template" , "");
 				results.appendChild(template);
 			}
-			if(data.list.length){
+			if(data.list.length < 1){
 			document.getElementById("text-box").className = "text-box";
 			document.getElementById("text").className = "text";	
 			document.getElementById("indexPage").className = "index-container";	
@@ -81,7 +81,7 @@
 						<div class="row">
 							<div class="col col-xs-4 col-sm-2">
 								<div class="monster-icon">
-									<img class="img-responive" src="img/203.png">
+									<img class="img-responsive" src="img/203.png">
 								</div>
 							</div>
 							<div class="col col-xs-8 col-sm-10 col-xs-push-4 col-sm-push-2 col-stack">
