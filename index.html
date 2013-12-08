@@ -34,10 +34,6 @@
 				return false;
 			};
 		};
-/*		function submitFunc(){
-				//getSearch(document.getElementById("search").value,populateSearch);
-				return false;	
-		}*/
 		function populateSearch(data){
 			var results = document.querySelector(".searchResults");
 			results.innerHTML = "";
@@ -45,7 +41,8 @@
 				var l = data.list[i];
 				var template = document.querySelector(".searchTemplate").cloneNode(true);
 				template.querySelector(".text").innerHTML = l.name;
-				template.querySelector(".img-responsive").setAttribute("src","img/"+l.id+".png");
+				//template.querySelector(".img-responsive").setAttribute("src","img/"+l.id+".png");
+				template.setAttribute("style","background-image: url(img/"+l.id+".png);");
 				template.className = template.className.replace("template" , "");
 				results.appendChild(template);
 			}
@@ -59,6 +56,14 @@
 			document.getElementById("indexPage").className = "";	
 			
 		};
+		
+		function displayDetails(id){
+			getDetails(id,populateDetails);
+		}
+		function populateDetails(data){
+			document.getElementById("indexPage").style = "display:none;";
+			document.getElementById("detailsPage").style = "";
+		}
         
 		</script>
 	</head>
