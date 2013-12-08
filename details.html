@@ -15,59 +15,88 @@
 
 	<div class="container">
 
-<nav class="navbar navbar-default" role="navigation">
-  <div class="navbar-header">
-    <a href="#" type="button" class="btn btn-default navbar-btn">
-      <span class="glyphicon glyphicon-home"></span>Home
-    </a>
-    
-    <a href="#" type="button" class="btn btn-info navbar-btn pull-right tog-cart">
-      <span class="glyphicon glyphicon-shopping-cart"></span>Cart
-    </a>
-  </div>
-</nav>
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="navbar-header">
+				<a href="#" type="button" class="btn btn-default navbar-btn">
+					<span class="glyphicon glyphicon-home"></span>Home
+				</a>
+				
+				<a href="#" type="button" class="btn btn-info navbar-btn pull-right tog-cart">
+					<span class="glyphicon glyphicon-shopping-cart"></span>Cart
+				</a>
+			</div>
+		</nav>
 		<div class="sidebar">
-				<p>Contents</p>
-				<!-- New div for each material, counted while in cart -->
-				<div></div>
-				<div></div>
-				<!-- After all materials listed, a condensed list of the monsters that are in the cart. -->
+			<p>Contents</p>
+			<!-- New div for each material, counted while in cart -->
+			<div></div>
+			<div></div>
+			<!-- After all materials listed, a condensed list of the monsters that are in the cart. -->
 		</div>
 
-		<div class="row top">
-			<div class="col-xs-12 col-sm-8 col-sm-push-4">
-				<h2 class="focus-name">Vampire Lord</h2>
-			</div>
-			<div class="col col-xs-12 visible-xs">
+		<div class="row">
+			<div class="col col-sm-6 hidden-xs">
 				<div class="icon-full">
-					<img src="full-img/111.jpg">
+					<img class="img-rounded" src="full-img/111.jpg">
 				</div>
 			</div>
-			<div class="col-sm-8 col-sm-push-4 col-xs-9 col-xs-push-3">
-				<h3 class="">HP: </h3>
-				<h3 class="">ATK: </h3>
-				<h3 class="">RCV: </h3>
-			</div>
-			<div class="col-xs-3 col-xs-pull-9 col-sm-4 col-sm-pull-8">
-				<div class="monster-icon icon-lg" style="background-image: url(img/111.png)"></div>
+			<div class="col col-xs-12 col-sm-6">
+				<h2 class="focus-name">Vampire Lord</h2>
+				<div class="row">
+					<div class="col col-xs-12 visible-xs">
+						<div class="icon-full">
+							<img class="img-rounded" src="full-img/111.jpg">
+						</div>
+					</div>
+					<div class="col col-xs-8 col-xs-push-4 col-sm-10 col-sm-push-0 panel panel-default stats">
+						<table>
+							<tr>
+								<td><h3 class="">HP: </h3></td><td class="hp-stat">###</td>
+							</tr>
+							<tr>
+								<td><h3 class="">ATK: </h3></td><td class="atk-stat">###</td>
+							</tr>
+							<tr>
+								<td><h3 class="">RCV: </h3></td><td class="rcv-stat">###</td>
+							</tr>
+						</table>
+					</div>
+					<div class="col col-xs-4 col-xs-pull-8 col-sm-2 col-sm-push-0">
+						<div class="monster-icon" style="background-image: url(img/111.png)"></div>
+					</div>
+				</div>
 			</div>
 		</div>
-		
-		<div class="row">
-		</div>
-		
-		<div class="past-evo panel panel-default">
+		<br>
+		<div class="evo panel panel-default">
 			<div class="panel-heading"><h3 class="panel-title">Evolves from:</h3></div>
 			<div class="panel-body">
 				<div class="row">
+					<div class="col col-xs-4 col-sm-2">
+						<div class="text-box">
+							<div class="text text-center">
+								<h3>Vampire</h3>
+							</div>
+						</div>
+					</div>
+					<div class="col col-xs-4 text-center col-sm-8">
+						<h3><span class="glyphicon glyphicon-chevron-right"></span></h3>
+					</div>
+					<div class="col col-xs-4 col-sm-2">
+						<div class="text-box">
+							<div class="text text-center">
+								<h3>Vampire Lord</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
 					<div class="col col-xs-4 col-sm-2"><div class="monster-icon" style="background-image: url(img/110.png)"></div></div>
 					<div class="col col-xs-4 col-sm-2 col-xs-push-4 col-sm-push-8"><div class="monster-icon" style="background-image: url(img/111.png)"></div></div>
-					<div class="col col-xs-4 col-xs-pull-4 visible-xs col-stack mat-toggle" data-toggle="collapse" data-target="#materials1">
-						<div class="stack stack-1">
-							<div class="col-inner">
-								<a href="">
-									Click to hide/show materials
-								</a>
+					<div class="col col-xs-4 col-xs-pull-4 visible-xs mat-toggle" data-toggle="collapse" data-target="#materials1">
+						<div class="text-box btn btn-info">
+							<div class="text text-center">
+								Click to see materials
 							</div>
 						</div>
 					</div>
@@ -108,60 +137,93 @@
 			</div>
 		</div> <!-- end template -->
 		
-		<div class="future-evo well well-lg">
-			<div class="row">
-				<div class="col col-xs-4 col-sm-2"><div class="monster-icon" style="background-image: url(img/111.png)"></div></div>
-				<div class="col col-xs-4 col-sm-2 col-xs-push-4 col-sm-push-8"><div class="monster-icon" style="background-image: url(img/516.png)"></div></div>
-				<div class="col col-xs-4 col-xs-pull-4 visible-xs mat-toggle" data-toggle="collapse" data-target="#materials2">
-					<div class="text-box">
-						<div class="text">
-							Click to hide/show materials
+		<div class="evo panel panel-default">
+			<div class="panel-heading"><h3 class="panel-title">Evolves to:</h3></div>
+			<div class="panel-body">
+				<div class="row">
+					<div class="col col-xs-4 col-sm-2">
+						<div class="text-box">
+							<div class="text text-center">
+								<h3>Kaworu & Mark.06 Under Construction</h3>
+							</div>
+						</div>
+					</div>
+					<div class="col col-xs-4 col-xs-push-4 col-sm-8 col-sm-push-2 col-stack">
+						<div class="stack stack-1">
+							<div class="col-inner">
+								<div class="text-box">
+									<div class="text text-center">
+										<h3><span class="glyphicon glyphicon-chevron-right"></span></h3>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col col-xs-4 col-xs-push-8 col-sm-2 col-sm-push-10 col-stack">
+						<div class="stack stack-1">
+							<div class="text-box">
+								<div class="text text-center">
+									<h3>Duke Vampire Lord</h3>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-				<div class="clearfix visible-xs"></div>
-				<div class="col col-sm-8 col-xs-12 col-sm-pull-2">
-					<div class="collapse row materials" id="materials2">
-						<div class="col col-sm-1 hidden-xs"></div>
-						<div class="col col-sm-6 col-xs-12">
-							<div class="row">
-								<div class="col col-xs-4">
-									<div class="monster-icon" style="background-image: url(img/321.png)"></div>
-								</div>
-								<div class="col col-xs-4">
-									<div class="monster-icon" style="background-image: url(img/251.png)"></div>
-								</div>
-								<div class="col col-xs-4">
-									<div class="monster-icon" style="background-image: url(img/250.png)"></div>
-								</div>
+				<div class="row">
+					<div class="col col-xs-4 col-sm-2"><div class="monster-icon" style="background-image: url(img/111.png)"></div></div>
+					<div class="col col-xs-4 col-sm-2 col-xs-push-4 col-sm-push-8"><div class="monster-icon" style="background-image: url(img/516.png)"></div></div>
+					<div class="col col-xs-4 col-xs-pull-4 visible-xs mat-toggle" data-toggle="collapse" data-target="#materials2">
+						<div class="text-box btn btn-info">
+							<div class="text text-center">
+								Click to see materials
 							</div>
 						</div>
-						<div class="clearfix visible-xs"></div>
-						<div class="col col-sm-4 col-xs-12">
-							<div class="row">
-								<div class="col col-xs-2 visible-xs"></div>
-								<div class="col col-xs-4 col-sm-6">
-									<div class="monster-icon" style="background-image: url(img/227.png)"></div>
+					</div>
+					<div class="clearfix visible-xs"></div>
+					<div class="col col-sm-8 col-xs-12 col-sm-pull-2">
+						<div class="collapse row materials" id="materials2">
+							<div class="col col-sm-1 hidden-xs"></div>
+							<div class="col col-sm-6 col-xs-12">
+								<div class="row">
+									<div class="col col-xs-4">
+										<div class="monster-icon" style="background-image: url(img/321.png)"></div>
+									</div>
+									<div class="col col-xs-4">
+										<div class="monster-icon" style="background-image: url(img/251.png)"></div>
+									</div>
+									<div class="col col-xs-4">
+										<div class="monster-icon" style="background-image: url(img/250.png)"></div>
+									</div>
 								</div>
-								<div class="col col-xs-4 col-sm-6">
-									<div class="monster-icon" style="background-image: url(img/234.png)"></div>
-								</div>
-								<div class="col col-xs-2 visible-xs"></div>
 							</div>
+							<div class="clearfix visible-xs"></div>
+							<div class="col col-sm-4 col-xs-12">
+								<div class="row">
+									<div class="col col-xs-2 visible-xs"></div>
+									<div class="col col-xs-4 col-sm-6">
+										<div class="monster-icon" style="background-image: url(img/227.png)"></div>
+									</div>
+									<div class="col col-xs-4 col-sm-6">
+										<div class="monster-icon" style="background-image: url(img/234.png)"></div>
+									</div>
+									<div class="col col-xs-2 visible-xs"></div>
+								</div>
+							</div>
+							<div class="col col-sm-1 hidden-xs"></div>
 						</div>
-						<div class="col col-sm-1 hidden-xs"></div>
 					</div>
 				</div>
 			</div>
+		</div>
+		
+		<div class="evo panel panel-default">
 			<div class="row">
 				<div class="col col-xs-4 col-sm-2"><div class="monster-icon" style="background-image: url(img/516.png)"></div></div>
 				<div class="col col-xs-4 col-sm-2 col-xs-push-4 col-sm-push-8"><div class="monster-icon" style="background-image: url(img/894.png)"></div></div>
-				<div class="col col-xs-4 col-xs-pull-4 visible-xs col-stack mat-toggle" data-toggle="collapse" data-target="#materials3">
-					<div class="stack stack-1">
-						<div class="col-inner">
-							<a href="">
-								Click to hide/show materials
-							</a>
+				<div class="col col-xs-4 col-xs-pull-4 visible-xs mat-toggle" data-toggle="collapse" data-target="#materials3">
+					<div class="text-box btn btn-info">
+						<div class="text text-center">
+							Click to see materials
 						</div>
 					</div>
 				</div>
@@ -172,13 +234,13 @@
 						<div class="col col-sm-6 col-xs-12">
 							<div class="row">
 								<div class="col col-xs-4">
-									<div class="monster-icon" style="background-image: url(img/170.png)"></div>
+									<div class="monster-icon" style="background-image: url(img/151.png)"></div>
 								</div>
 								<div class="col col-xs-4">
-									<div class="monster-icon" style="background-image: url(img/170.png)"></div>
+									<div class="monster-icon" style="background-image: url(img/321.png)"></div>
 								</div>
 								<div class="col col-xs-4">
-									<div class="monster-icon" style="background-image: url(img/170.png)"></div>
+									<div class="monster-icon" style="background-image: url(img/175.png)"></div>
 								</div>
 							</div>
 						</div>
@@ -187,10 +249,10 @@
 							<div class="row">
 								<div class="col col-xs-2 visible-xs"></div>
 								<div class="col col-xs-4 col-sm-6">
-									<div class="monster-icon" style="background-image: url(img/170.png)"></div>
+									<div class="monster-icon" style="background-image: url(img/247.png)"></div>
 								</div>
 								<div class="col col-xs-4 col-sm-6">
-									<div class="monster-icon" style="background-image: url(img/159.png)"></div>
+									<div class="monster-icon" style="background-image: url(img/251.png)"></div>
 								</div>
 								<div class="col col-xs-2 visible-xs"></div>
 							</div>
@@ -202,12 +264,10 @@
 			<div class="row">
 				<div class="col col-xs-4 col-sm-2"><div class="monster-icon" style="background-image: url(img/516.png)"></div></div>
 				<div class="col col-xs-4 col-sm-2 col-xs-push-4 col-sm-push-8"><div class="monster-icon" style="background-image: url(img/895.png)"></div></div>
-				<div class="col col-xs-4 col-xs-pull-4 visible-xs col-stack mat-toggle" data-toggle="collapse" data-target="#materials4">
-					<div class="stack stack-1">
-						<div class="col-inner">
-							<a href="">
-								Click to hide/show materials
-							</a>
+				<div class="col col-xs-4 col-xs-pull-4 visible-xs mat-toggle" data-toggle="collapse" data-target="#materials4">
+					<div class="text-box btn btn-info">
+						<div class="text text-center">
+							Click to see materials
 						</div>
 					</div>
 				</div>
@@ -218,13 +278,13 @@
 						<div class="col col-sm-6 col-xs-12">
 							<div class="row">
 								<div class="col col-xs-4">
+									<div class="monster-icon" style="background-image: url(img/151.png)"></div>
+								</div>
+								<div class="col col-xs-4">
 									<div class="monster-icon" style="background-image: url(img/321.png)"></div>
 								</div>
 								<div class="col col-xs-4">
-									<div class="monster-icon" style="background-image: url(img/251.png)"></div>
-								</div>
-								<div class="col col-xs-4">
-									<div class="monster-icon" style="background-image: url(img/250.png)"></div>
+									<div class="monster-icon" style="background-image: url(img/247.png)"></div>
 								</div>
 							</div>
 						</div>
@@ -233,10 +293,10 @@
 							<div class="row">
 								<div class="col col-xs-2 visible-xs"></div>
 								<div class="col col-xs-4 col-sm-6">
-									<div class="monster-icon" style="background-image: url(img/227.png)"></div>
+									<div class="monster-icon" style="background-image: url(img/251.png)"></div>
 								</div>
 								<div class="col col-xs-4 col-sm-6">
-									<div class="monster-icon" style="background-image: url(img/234.png)"></div>
+									<div class="monster-icon" style="background-image: url(img/916.png)"></div>
 								</div>
 								<div class="col col-xs-2 visible-xs"></div>
 							</div>
