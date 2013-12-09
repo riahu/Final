@@ -17,10 +17,9 @@ function getFilter(term, filterby, callback){
 };
 
 //to:what you are evolving into
-//from:what you are evolving from
 //callback:function to call on load (one data parameter)
 //data: {"materials":[153,155]}
-function getMaterials(to, from, callback){
+function getMaterials(to, callback){
 	getData("a=materials&to="+to+"&from="+from,callback);
 };
 

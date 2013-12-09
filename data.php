@@ -108,12 +108,18 @@ header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
 	} else if($_GET['a'] == "materials"){
 		//get from and to
 		$materials = array();
-		$results = sqlsrv_query($conn,"SELECT evolveId FROM evolveTo WHERE owner=".$_GET['from']." AND evolveTo=".$_GET['to'].";");
+		$results2 = sqlsrv_query($conn,"SELECT evolveFrom FROM evolveFrom WHERE owner=".$_GET['to'].";");
+		$result2 = sqlsrv_fetch_array($results2,SQLSRV_FETCH_ASSOC);
+		$results = sqlsrv_query($conn,"SELECT evolveId FROM evolveTo WHERE owner=".$result2['evolveFrom']." AND evolveTo=".$_GET['to'].";");
 		$result = sqlsrv_fetch_array($results,SQLSRV_FETCH_ASSOC);
 		if($result){
 			$results = sqlsrv_query($conn,"SELECT * FROM materials WHERE evolveId=".$result['evolveId'].";");
 			while($row = sqlsrv_fetch_array($results,SQLSRV_FETCH_ASSOC)){
-				$materials[] = $row['material'];
+				$results3 = sqlsrv_query($conn,"SELECT name FROM monsters WHERE id=".$row['material'].";");
+				$result3 = sqlsrv_fetch_array($results3,SQLSRV_FETCH_ASSOC);
+				$ma['id'] = $row['material'];
+				$ma['name'] = $result3['name'];
+				$materials[] = $ma;
 			}
 		}
 		$j['materials'] = $materials;
