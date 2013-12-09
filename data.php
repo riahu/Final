@@ -58,7 +58,13 @@ header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
 			$result = sqlsrv_fetch_array($results,SQLSRV_FETCH_ASSOC);
 			if($result){
 				$ar = getLast($result['evolveFrom'],$c);
-				$ar[] = $result['evolveFrom'];
+				$mats = array();
+				while($row = sqlsrv_fetch_array(sqlsrv_query("SELECT * FROM materials WHERE evolveId=".$result['evolveFrom'].'999'.$k.";"),SQLSRV_FETCH_ASSOC)){
+					$mats[] = $row['material'];
+				}
+				$ob['mats'] = $mats;
+				$ob['id'] = $result['evolveFrom'];
+				$ar[] = $ob;
 				return $ar;
 			}
 			$ar = array();
