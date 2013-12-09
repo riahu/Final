@@ -4,8 +4,8 @@
 //term: term to search by
 //callback: function to call on load (one json data parameter will be sent)
 //data: {"list":[{"name":"Angeling","id":593}]}
-function getSearch(term, callback){
-	getData("a=search&searchby=name&q="+term,callback);
+function getSearch(term, searchby, callback){
+	getData("a=search&searchby="+searchby+"&q="+term,callback);
 };
 
 //term: term to search/filter by
