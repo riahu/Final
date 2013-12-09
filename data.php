@@ -78,8 +78,7 @@ header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
 		function getNext($k,$c){
 			$r = $k;
 			$ar = array();
-			$results = sqlsrv_query($c,"SELECT evolveTo FROM evolveTo WHERE owner=".$r.";");
-			while($result=sqlsrv_fetch_array($results,SQLSRV_FETCH_ASSOC)){
+			while($result=sqlsrv_fetch_array(sqlsrv_query($c,"SELECT evolveTo FROM evolveTo WHERE owner=".$r.";"),SQLSRV_FETCH_ASSOC)){
 				
 				$mats = array();
 				$rows = sqlsrv_query($c,"SELECT * FROM materials WHERE evolveId=".$r.'999'.$result['evolveTo'].";");
