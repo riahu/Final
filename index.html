@@ -43,6 +43,7 @@
 				template.querySelector(".monster-name").innerHTML = l.name;
 				//template.querySelector(".img-responsive").setAttribute("src","img/"+l.id+".png");
 				template.querySelector(".monster-icon").setAttribute("style","background-image: url(img/"+l.id+".png);");
+				template.querySelector("#details-button").setAttribute("onclick","displayDetails("+l.id+")");
 				template.className = template.className.replace("template" , "");
 				results.appendChild(template);
 			}
@@ -59,17 +60,19 @@
 		
 		function displayDetails(id){
 			getDetails(id,populateDetails);
-		}
+		};
 		function populateDetails(data){
-			document.getElementById("monsterName") = data.name;
+			alert(data.name);
+			document.getElementById("monsterName").innerHTML = data.name;
 			document.getElementById("image1").setAttribute("src","full-img/"+data.id+".jpg");
 			document.getElementById("image2").setAttribute("src","full-img/"+data.id+".jpg");
 			document.querySelector(".hp-stat").innerHTML = data.hp;
 			document.querySelector(".atk-stat").innerHTML = data.atk;
 			document.querySelector(".rcv-stat").innerHTML = data.rcv;
-			document.getElementById("monster-icon").style = "background-image: url(img/"+data.id+");";
-			document.getElementById("indexPage").style = "display:none;";
-			document.getElementById("detailsPage").style = "";
+			document.getElementById("monster-icon").setAttribute("style","background-image: url(img/"+data.id+".png);");
+			document.getElementById("indexPage").style.display = "none";
+			document.getElementById("detailsPage").style.display = "inline";
+			alert("done");
 		}
         
 		</script>
