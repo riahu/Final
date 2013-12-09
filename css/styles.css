@@ -137,6 +137,13 @@ h3 {
 	background-position: center;
 }
 
+.monster-link {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 100px;
+}
+
 .icon-lg {
 	height: 200px;
 }
@@ -150,7 +157,11 @@ h3 {
 	width: 100%;
 }
 
-.cIcon{
+.materials .col {
+	padding: 0;
+}
+
+.cIcon {
 	height:50px;
 	width:50px;
 	background-size:contain;
@@ -158,10 +169,6 @@ h3 {
 
 .name{
 	width:150px;
-}
-
-.id{
-
 }
 
 .collapse {
@@ -182,7 +189,7 @@ h3 {
 }
 
 .template {
-	display: none;
+	display: none !important;
 }
 
 @media (max-width:400px) {
@@ -207,6 +214,10 @@ h3 {
 }
 
 @media(max-width:767px) {
+	.index-container > .text-box {
+		display: relative;
+	}
+
 	.logo-index {
 		width: 300px;
 		height: 200px;

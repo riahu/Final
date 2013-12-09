@@ -2,8 +2,13 @@
 var cart = {items: []};
 
 
-function add(namex, idx){
-	var cItem = {name: namex, id: idx};
+function add(namex, idx, prevnamex, previdx){
+	var cItem = {
+		name: namex,
+		id: idx,
+		prevname: prevnamex,
+		previd: idx
+	};
 
 	cart.items.push(cItem);
 	
@@ -26,13 +31,6 @@ function buildCart(){
         temp.removeClass("ctemp");
         sidebar.append(temp);
     }
-}
-
-function testCart(){
-	add("Pika", 2);
-	add("Pika", 4);
-	add("Pika", 3);
-
 }
 
 var mats = new Array();
