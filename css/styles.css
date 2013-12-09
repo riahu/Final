@@ -100,7 +100,7 @@ h3 {
 	height: 100%;
 } 
 
-.index-container form {
+.index-container > form {
 	text-align: center;
 }
 
@@ -177,7 +177,7 @@ h3 {
 	height: 100px;
 }
 
-.evo .panel-body {
+.evo .panel-body, .sidebar .panel-body {
 	padding: 0;
 }
 
@@ -196,6 +196,7 @@ h3 {
 @media(max-width:1199px) {
 	body {
 		font-size: 16px;
+		padding: 0;
 	}
 }
 
@@ -234,16 +235,17 @@ h3 {
 	}
 }
 
-.ctemp{
-	display:none;
+@media(min-width:1200px) {
 }
 
-@media(min-width:1200px) {
-	.sidebar{
-		width:300px;
-		top:100px;
-		right:0px;
-		}
+.sidebar{
+	width:300px;
+	top:100px;
+	right:0px;
+}
+
+.ctemp{
+	display:none;
 }
 
 .sidebar{

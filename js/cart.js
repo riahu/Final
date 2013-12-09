@@ -12,13 +12,11 @@ function add(namex, idx){
 
 
 function buildCart(){
-	var sidebar = $('.sidebar');
+	var sidebar = $('.sidebar').find(".panel-body");
 	var ctemp = $('.ctemp');
 	sidebar.empty();
-	sidebar.append("<h3>Tracked Monsters</h3>");
 
-
-    for (idx = 0; idx < cart.items.length; ++idx) {
+    for (var idx = 0; idx < cart.items.length; ++idx) {
         var item = cart.items[idx];
         var temp = ctemp.clone();
         var icon = temp.find(".cIcon");

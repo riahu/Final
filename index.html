@@ -154,42 +154,40 @@
 			<div id="text-box" class="text-box">
 				<div id="text" class="text">
 					<div class="container">
-						<form class="form-inline index-search" action="#" role="form">
+						<form class="form-inline index-search text-center" action="#" role="form">
 							<div class="logo logo-index"></div>
 							<div class="form-group">
 								<input type="search" class="form-control" id="search" placeholder="Find a monster">
 							</div>
 							<button type="submit" class="btn btn-default">Search</button>
-							<button type="submit" class="btn btn-default">I'm feeling lucky</button>
 							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-info-sign"></span></button>
 						</form>
                         <div class="searchResults">
                         </div>
-									<div class="template searchTemplate panel panel-default">
-										<div class="panel-heading">
-											<h3 class="monster-name"></h3>
+						<div class="template searchTemplate panel panel-default"> <!-- search result template -->
+							<div class="panel-heading">
+								<h3 class="monster-name"></h3>
+							</div>
+							<div class="panel-body">
+								<div class="row">
+									<div class="col col-xs-4 col-sm-2">
+										<div class="monster-icon">							
 										</div>
-										<div class="panel-body">
-											<div class="row">
-												<div class="col col-xs-4 col-sm-2">
-													<div class="monster-icon">							
-													</div>
-												</div>
-												<div class="col col-xs-8 col-sm-8 col-xs-push-4 col-sm-push-2 col-stack">
-													<div class="stack stack-1">
-														<div class="text-box">
-															<div class="text">
-																<div class="btn btn-info" id="details-button">
-																	See Details
-																</div>
-															</div>
-														</div>
+									</div>
+									<div class="col col-xs-8 col-sm-8 col-xs-push-4 col-sm-push-2 col-stack">
+										<div class="stack stack-1">
+											<div class="text-box">
+												<div class="text">
+													<div class="btn btn-info" id="details-button">
+														See Details
 													</div>
 												</div>
 											</div>
 										</div>
-									</div> <!-- end template -->
-									<!-- onClick="javascript: add("name", id)" -->
+									</div>
+								</div>
+							</div>
+						</div> <!-- end template -->
 					</div>
 				</div>
 			</div>
@@ -212,20 +210,25 @@
 				</a>
 			</div>
 		</nav>
-		<div class="sidebar container">
-				<p>Contents</p>
-				<!-- New div for each material, counted while in cart -->
-				<div class="ctemp cart-item row">
-					<div class="cIcon col col-sm-3">
-					</div>
-					<div class="name col-sm-6">
-
-					</div>
-					<div class="id col col-sm-3">
-
-					</div>
-				</div>				
+		<!-- template for cart items -->
+		<div class="ctemp list-group-item">
+			<div class="row">
+				<div class="cIcon col col-xs-3">
+				</div>
+				<div class="name col col-xs-6">
+				</div>
+				<div class="id col col-xs-3">
+				</div>
+			</div>
+		</div>	
+		<div class="sidebar panel panel-info">
+			<div class="panel-heading">
+				<h3>Tracked Monsters:</h3>
+			</div>
+			<div class="panel-body list-group">
+				<!-- New div for each material, counted while in cart -->			
 				<!-- After all materials listed, a condensed list of the monsters that are in the cart. -->
+			</div>
 		</div>
 
 		<div class="row">
@@ -236,13 +239,13 @@
 			</div>
 			<div class="col col-xs-12 col-sm-6">
 				<div class="row">
-					<div class="col col-xs-8 col-sm-10">
+					<div class="col col-xs-8">
 						<h2 class="focus-name" id="monsterName">Vampire Lord</h2>
 					</div>
-					<div class="col col-xs-4 col-sm-2">
-						<div class="btn btn-info" id="add-button">
+					<div class="col col-xs-4 text-right">
+						<a class="btn btn-info" id="add-button">
 							Add to Cart
-						</div>
+						</a>
 					</div>
 				</div>
 				<br>
