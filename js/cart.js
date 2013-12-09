@@ -30,8 +30,8 @@ function totalCart(cartPage) {
 	document.querySelector("#cart-total .panel-body").innerHTML="<div class='list-group-item'><h3>No items in the cart right now.</h3></div>";
 	if (cart.items.length > 0) {
 		document.querySelector("#cart-total .panel-body").innerHTML="";
-		countMaterials();
 	}
+	countMaterials();
 }
 
 function buildCart(){
