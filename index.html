@@ -11,7 +11,7 @@
         <script type="text/javascript">
         window.onload = function(){
 			document.querySelector(".index-search").onsubmit = function(){
-				getSearch(document.getElementById("search").value,populateSearch);
+				getSearch(document.getElementById("search").value, "name",populateSearch);
 				return false;
 			};
 			document.getElementById("homeBtn1").onclick = function(){
@@ -186,18 +186,6 @@
 								<input type="search" class="form-control" id="search" placeholder="Find a monster">
 							</div>
 							<button type="submit" class="btn btn-default">Search</button>
-							<div class="btn-group">
-								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-									Sort by: <span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu" role="menu">
-									<li><a href="#">Fire</a></li>
-									<li><a href="#">Water</a></li>
-									<li><a href="#">Wood</a></li>
-									<li><a href="#">Light</a></li>
-									<li><a href="#">Dark</a></li>
-								</ul>
-							</div>
 							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-info-sign"></span></button>
 						</form>
 						<br>
