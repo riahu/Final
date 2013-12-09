@@ -10,6 +10,8 @@ function removeCartItem(idx) {
 	}
 	
 	buildCart();
+	
+	totalCart();
 }
 
 function add(namex, idx, prevnamex, previdx, matsx){
@@ -26,7 +28,7 @@ function add(namex, idx, prevnamex, previdx, matsx){
 	buildCart();
 }
 		
-function totalCart(cartPage) {
+function totalCart() {
 	document.querySelector("#cart-total .panel-body").innerHTML="<div class='list-group-item'><h3>No items in the cart right now.</h3></div>";
 	if (cart.items.length > 0) {
 		document.querySelector("#cart-total .panel-body").innerHTML="";
@@ -63,7 +65,7 @@ function countMaterials(){
 	for (i=0; i<cart.items.length; ++i){
 		item = cart.items[i];
 		// getMaterials(item.id, item.previd, matCall);
-		var template = document.querySelector(".evo-template").cloneNode(true);
+		var template = document.querySelector(".cart-row-template").cloneNode(true);
 		template.querySelector("#prev-name").innerHTML = cart.items[i].prevname;
 		var prevIcon = template.querySelector("#prev-icon");
 		var prevId = item.previd;
@@ -76,8 +78,12 @@ function countMaterials(){
 		currIcon.setAttribute("style", "background-image: url(img/"+currId+".png);");
 		currIcon.appendChild(document.querySelector(".monster-link").cloneNode(false));
 		currIcon.querySelector(".monster-link").setAttribute("onclick","displayDetails("+currId+")");
+		template.querySelector(".remove-btn").setAttribute("onclick","removeCartItem("+currId+")");
 		for (var j=0; j < item.matlist.length; ++j) {
-			template.querySelector(".mat"+(j+1)).setAttribute("style", "background-image: url(img/"+item.matlist[j]+".png);");
+			var currMat = template.querySelector(".mat"+(j+1));
+			currMat.setAttribute("style", "background-image: url(img/"+item.matlist[j]+".png);");
+			currMat.appendChild(document.querySelector(".monster-link").cloneNode(false));
+			currMat.querySelector(".monster-link").setAttribute("onclick","displayDetails("+item.matlist[j]+")");
 			var t = item.matlist[j];
 			if(mats[t] == null){
 				mats[t] = {

@@ -30,7 +30,7 @@
 				document.getElementById("indexPage").style.display = "none";
 				document.getElementById("detailsPage").style.display = "none";
 				document.getElementById("checkoutPage").style.display = "block";
-				totalCart(document.getElementById("checkoutPage"));
+				totalCart();
 				$('html, body').animate({ scrollTop: 0 }, 'fast');
 			};
 		};
@@ -62,6 +62,7 @@
 			getDetails(id,populateDetails);
 		};
 		function populateDetails(data){
+			$('.sidebar').hide();
 			document.getElementById("monsterName").innerHTML = data.name;
 			document.getElementById("image1").setAttribute("src","full-img/"+data.id+".jpg");
 			document.getElementById("image2").setAttribute("src","full-img/"+data.id+".jpg");
@@ -101,7 +102,10 @@
 						document.querySelector("#add-button").removeAttribute("disabled");
 					}
 					for (var j=0; j < data.prevo[i].mats.length; ++j) {
-						template.querySelector(".mat"+(j+1)).setAttribute("style", "background-image: url(img/"+data.prevo[i].mats[j]+".png);");
+						var currMat = template.querySelector(".mat"+(j+1));
+						currMat.setAttribute("style", "background-image: url(img/"+data.prevo[i].mats[j]+".png);");
+						currMat.appendChild(document.querySelector(".monster-link").cloneNode(false));
+						currMat.querySelector(".monster-link").setAttribute("onclick","displayDetails("+data.prevo[i].mats[j]+")");
 					}
 					var matTog = template.querySelector(".mat-toggle");
 					matTog.setAttribute("data-target", matTog.getAttribute("data-target")+matDex);
@@ -151,7 +155,10 @@
 					currIcon.appendChild(document.querySelector(".monster-link").cloneNode(false));
 					currIcon.querySelector(".monster-link").setAttribute("onclick","displayDetails("+currId+")");
 					for (var j=0; j < data.evo[i].mats.length; ++j) {
-						template.querySelector(".mat"+(j+1)).setAttribute("style", "background-image: url(img/"+data.evo[i].mats[j]+".png);");
+						var currMat = template.querySelector(".mat"+(j+1));
+						currMat.setAttribute("style", "background-image: url(img/"+data.evo[i].mats[j]+".png);");
+						currMat.appendChild(document.querySelector(".monster-link").cloneNode(false));
+						currMat.querySelector(".monster-link").setAttribute("onclick","displayDetails("+data.evo[i].mats[j]+")");
 					}
 					var matTog = template.querySelector(".mat-toggle");
 					matTog.setAttribute("data-target", matTog.getAttribute("data-target")+matDex);
@@ -392,6 +399,87 @@
 						</div>
 					</div>
 				</div> <!-- end monster and material icon row -->
+			</div>
+			<div class="list-group-item template cart-row-template">
+				<div class="row">
+					<div class="col col-xs-10">
+						<div class="row"> <!-- monster label row -->
+							<div class="col col-xs-4 col-sm-2">
+								<div class="text-box">
+									<div class="text text-center">
+										<h3 id="prev-name"></h3> <!-- previous monster -->
+									</div>
+								</div>
+							</div>
+							<div class="col col-xs-4 col-sm-8">
+							</div>
+							<div class="col col-xs-4 col-sm-2">
+								<div class="text-box">
+									<div class="text text-center">
+										<h3 id="current-name"></h3> <!-- current monster -->
+									</div>
+								</div>
+							</div>
+						</div> <!-- end monster label row -->
+						<div class="row"> <!-- monster and material icon row -->
+							<div class="col col-xs-4 col-sm-2">
+								<div class="monster-icon" style="" id="prev-icon"><a class="monster-link" href="#"></a></div> <!-- previous monster -->
+							</div>
+							<div class="col col-xs-4 col-sm-2 col-xs-push-4 col-sm-push-8">
+								<div class="monster-icon" style="" id="current-icon"></div> <!-- current monster -->
+							</div>
+							<div class="col col-xs-4 col-xs-pull-4 visible-xs mat-toggle" data-toggle="collapse" data-target="#materials">
+								<div class="text-box btn btn-info">
+									<div class="text text-center">
+										Click to see materials
+									</div>
+								</div>
+							</div>
+							<div class="clearfix visible-xs"></div>
+							<div class="col col-sm-8 col-xs-12 col-sm-pull-2">
+								<div class="collapse row materials" id="materials">
+									<div class="col col-sm-1 hidden-xs"><h1>+</h1></div>
+									<div class="col col-sm-6 col-xs-12">
+										<div class="row">
+											<div class="col col-xs-4">
+												<div class="monster-icon mat1" style=""></div>
+											</div>
+											<div class="col col-xs-4">
+												<div class="monster-icon mat2" style=""></div>
+											</div>
+											<div class="col col-xs-4">
+												<div class="monster-icon mat3" style=""></div>
+											</div>
+										</div>
+									</div>
+									<div class="clearfix visible-xs"></div>
+									<div class="col col-sm-4 col-xs-12">
+										<div class="row">
+											<div class="col col-xs-2 visible-xs"></div>
+											<div class="col col-xs-4 col-sm-6">
+												<div class="monster-icon mat4" style=""></div>
+											</div>
+											<div class="col col-xs-4 col-sm-6">
+												<div class="monster-icon mat5" style=""></div>
+											</div>
+											<div class="col col-xs-2 visible-xs"></div>
+										</div>
+									</div>
+									<div class="col col-sm-1 hidden-xs text-right"><h1>=</h1></div>
+								</div>
+							</div>
+						</div> <!-- end monster and material icon row -->
+					</div>
+					<div class="col col-xs-2 col-xs-push-10 col-stack">
+						<div class="stack stack-1">
+							<div class="text-box">
+								<div class="text">
+									<button class="btn btn-info btn-block remove-btn"><span class="glyphicon glyphicon-remove-sign"></span></button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 			<div class="panel-body list-group">
 			</div>
