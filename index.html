@@ -89,6 +89,7 @@
 							</div>
 							<button type="submit" class="btn btn-default">Search</button>
 							<button type="submit" class="btn btn-default">I'm feeling lucky</button>
+							<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"><span class="glyphicon glyphicon-info-sign"></span></button>
 						</form>
                         <div class="searchResults">
                         </div>
@@ -480,7 +481,30 @@
 			</div>
 		</div> <!-- end future evo -->
 	</div>
-    
+		<!-- Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-body">
+						<h3>What is this website?</h3>
+						<p>Puzzle&Dragons is a freemium smartphone game that combines elements of a puzzle game, an RPG, and a
+						monster collecting game. With over 900 collectable monsters, a reference guide is something that
+						most players find handy.</p><br>
+						<h3>What is @.2?</h3>
+						<p>Most players in the game associate themselves with different groups - using @ to denote the site.
+						While @PF (Puzzle&Dragons Forum) and @PG (Puzzle&Dragons Global) are some of the most popular, 
+						@.2 is just a small group of local players responsible for dreaming up this website.</p><br>
+						<h3>So... what can I do with this?</h3>
+						<p>Think of it like a Pokedex! Go looking for cool monsters, look up your favorite monster - the
+						possibilities are endless. You can make use of our evolution material tracker to make sure you
+						know exactly what you need to evolve your monsters.</p><br>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div><!-- /.modal -->
     
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>
