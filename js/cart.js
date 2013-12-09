@@ -6,6 +6,8 @@ function add(namex, idx){
 	var cItem = {name: namex, id: idx};
 
 	cart.items.push(cItem);
+	
+	buildCart();
 }
 
 
@@ -17,16 +19,14 @@ function buildCart(){
 
 
     for (idx = 0; idx < cart.items.length; ++idx) {
-        item = cart.items[idx];
-        temp = ctemp.clone();
+        var item = cart.items[idx];
+        var temp = ctemp.clone();
         var icon = temp.find(".cIcon");
         icon.css("background-image", "url(img/"+item.id+".png)");
         var name = temp.find(".name");
         name.html(item.name);
         temp.removeClass("ctemp");
         sidebar.append(temp);
-
-
     }
 }
 
@@ -37,7 +37,7 @@ function testCart(){
 
 }
 
-var mats = new array();
+var mats = new Array();
 
 function countMaterials(){
 	for (i=0; i<cart.items.length; ++i){
@@ -77,5 +77,4 @@ $(function(){
 	buildCart();
 
 	countMaterials();
-
 });
