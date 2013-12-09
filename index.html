@@ -62,7 +62,6 @@
 			getDetails(id,populateDetails);
 		};
 		function populateDetails(data){
-		alert(data.prevo.length);
 			document.getElementById("monsterName").innerHTML = data.name;
 			document.getElementById("image1").setAttribute("src","full-img/"+data.id+".jpg");
 			document.getElementById("image2").setAttribute("src","full-img/"+data.id+".jpg");
@@ -188,7 +187,16 @@
 				</div>
 			</div>
 			<div class="col col-xs-12 col-sm-6">
-				<h2 class="focus-name" id="monsterName">Vampire Lord</h2>
+				<div class="row">
+					<div class="col col-xs-8 col-sm-10">
+						<h2 class="focus-name" id="monsterName">Vampire Lord</h2>
+					</div>
+					<div class="col col-xs-4 col-sm-2">
+						<div class="btn btn-info" id="details-button">
+							Add to Cart
+						</div>
+					</div>
+				</div>
 				<br>
 				<div class="row">
 					<div class="col col-xs-12 visible-xs">
