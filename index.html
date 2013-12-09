@@ -14,9 +14,23 @@
 				getSearch(document.getElementById("search").value,populateSearch);
 				return false;
 			};
-			document.getElementById("homeBtn").onclick = function(){
+			document.getElementById("homeBtn1").onclick = function(){
 				document.getElementById("indexPage").style.display = "inline";
 				document.getElementById("detailsPage").style.display = "none";
+				document.getElementById("checkoutPage").style.display = "none";
+				$('html, body').animate({ scrollTop: 0 }, 'fast');
+			};
+			document.getElementById("homeBtn2").onclick = function(){
+				document.getElementById("indexPage").style.display = "inline";
+				document.getElementById("detailsPage").style.display = "none";
+				document.getElementById("checkoutPage").style.display = "none";
+				$('html, body').animate({ scrollTop: 0 }, 'fast');
+			};
+			document.getElementById("checkout-btn").onclick = function(){
+				document.getElementById("indexPage").style.display = "none";
+				document.getElementById("detailsPage").style.display = "none";
+				document.getElementById("checkoutPage").style.display = "block";
+				totalCart(document.getElementById("checkoutPage"));
 				$('html, body').animate({ scrollTop: 0 }, 'fast');
 			};
 		};
@@ -82,9 +96,8 @@
 						template.querySelector("#current-name").innerHTML = data.name;
 						template.querySelector("#current-icon").setAttribute("style", "background-image: url(img/"+data.id+".png);");
 						var prevName = data.prevo[i].name;
-						document.querySelector("#add-button").onclick = function(){
-							add(data.name, data.id, prevName, prevId);
-						};
+						var matlist = data.prevo[i].mats;
+						document.querySelector("#add-button").setAttribute("onclick","add('"+data.name+"',"+data.id+",'"+prevName+"',"+prevId+",["+matlist+"])");
 						document.querySelector("#add-button").removeAttribute("disabled");
 					}
 					for (var j=0; j < data.prevo[i].mats.length; ++j) {
@@ -155,6 +168,7 @@
 				}
 			}
 			document.getElementById("indexPage").style.display = "none";
+			document.getElementById("checkoutPage").style.display = "none";
 			document.getElementById("detailsPage").style.display = "block";
 			$('html, body').animate({ scrollTop: 0 }, 'fast');
 		}
@@ -205,17 +219,15 @@
 				</div>
 			</div>
 		</div>
-        
-        
-        
-        
-        
+		
+		
+		
     <div id="detailsPage" style="display:none;" class="container">
 
 		<nav class="navbar navbar-default" role="navigation">
 			<div class="navbar-header">
-				<a href="#" id="homeBtn" type="button" class="btn btn-default navbar-btn">
-					<span class="glyphicon glyphicon-home"></span>Home
+				<a href="#" id="homeBtn1" type="button" class="btn btn-default navbar-btn">
+					<span class="glyphicon glyphicon-home"></span> &nbsp;Back to search results
 				</a>
 				
 				<a href="#" type="button" class="btn btn-info navbar-btn pull-right tog-cart">
@@ -231,6 +243,7 @@
 				<div class="name col col-xs-6">
 				</div>
 				<div class="id col col-xs-3">
+					<button class="btn btn-info btn-block remove-btn"><span class="glyphicon glyphicon-remove-sign"></span></button>
 				</div>
 			</div>
 		</div>	
@@ -241,6 +254,9 @@
 			<div class="panel-body list-group">
 				<!-- New div for each material, counted while in cart -->			
 				<!-- After all materials listed, a condensed list of the monsters that are in the cart. -->
+			</div>
+			<div class="panel-footer">
+				<button class="btn btn-info btn-block" id="checkout-btn">View total materials</button>
 			</div>
 		</div>
 
@@ -382,6 +398,55 @@
 		<div id="futureList">
 		</div>
 	</div>
+        
+        
+    <div id="checkoutPage" style="display:none;" class="container">
+
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="navbar-header">
+				<a href="#" id="homeBtn2" type="button" class="btn btn-default navbar-btn">
+					<span class="glyphicon glyphicon-home"></span> &nbsp;Back to search results
+				</a>
+			</div>
+		</nav>
+		
+		<div class="panel panel-info" id="cart-total">
+			<div class="panel-heading">
+				<h3>Your cart:</h3>
+			</div>
+			<div class="panel-body list-group">
+				<!-- New div for each material, counted while in cart -->			
+				<!-- After all materials listed, a condensed list of the monsters that are in the cart. -->
+			</div>
+		</div>
+		<div class="panel panel-success" id="material-total">
+			<div class="panel-heading">
+				<h3>Total materials:</h3>
+			</div>
+			<div class="panel-body">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Material</th>
+							<th>Quantity</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr class="mat-total-row template">
+							<td>
+								<div class="monster-icon" style=""></div>
+							</td>
+							<td>
+								<h3></h3>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+	
+	
 		<!-- Modal -->
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 			<div class="modal-dialog">

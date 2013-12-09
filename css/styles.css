@@ -215,7 +215,7 @@ h3 {
 
 @media(max-width:767px) {
 	.index-container > .text-box {
-		display: relative;
+		display: inline;
 	}
 
 	.logo-index {
