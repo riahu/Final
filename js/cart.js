@@ -1,8 +1,5 @@
 
-
 var cart = {items: []};
-
-
 
 
 function add(namex, idx){
@@ -11,17 +8,25 @@ function add(namex, idx){
 	cart.items.push(cItem);
 }
 
+
 function buildCart(){
 	var sidebar = $('.sidebar');
-	var ctemp = sidebar.find('.ctemp');
+	var ctemp = $('.ctemp');
+
 
     for (idx = 0; idx < cart.items.length; ++idx) {
         item = cart.items[idx];
-        var clone = ctemp;
-        clone.find('.cIcon').css("background-image: url(img/" + item.id + ".png);");
-        clone.removeClass("ctemp");
-        sidebar.append(clone);
-    }}
+        temp = ctemp.clone();
+        var icon = temp.find(".cIcon");
+        icon.css("background-image", "url(img/"+item.id+".png)");
+        var name = temp.find(".name");
+        name.html(item.name);
+        temp.removeClass("ctemp");
+        sidebar.append(temp);
+
+
+    }
+}
 
 function testCart(){
 	add("Pika", 2);

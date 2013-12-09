@@ -143,6 +143,20 @@ h3 {
 	width: 100%;
 }
 
+.cIcon{
+	height:50px;
+	width:50px;
+	background-size:contain;
+}
+
+.name{
+	width:150px;
+}
+
+.id{
+
+}
+
 .collapse {
 	display: block;
 }
@@ -229,7 +243,9 @@ h3 {
 	position:absolute;
 	display:none;
 	z-index:999;
-	background-color:#222222;
+	background-color:white;
+	background-color: #f8f8f8;
+	border-color: #e7e7e7;
 }
 
 .navbar-header{
