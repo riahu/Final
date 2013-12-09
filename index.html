@@ -33,6 +33,10 @@
 				getSearch(document.getElementById("search").value,populateSearch);
 				return false;
 			};
+			document.getElementById("homeBtn").onclick = function(){
+				document.getElementById("indexPage").style.display = "inline";
+				document.getElementById("detailsPage").style.display = "none";
+			};
 		};
 		function populateSearch(data){
 			var results = document.querySelector(".searchResults");
@@ -155,7 +159,7 @@
 
 		<nav class="navbar navbar-default" role="navigation">
 			<div class="navbar-header">
-				<a href="index.html" type="button" class="btn btn-default navbar-btn">
+				<a href="#" id="homeBtn" type="button" class="btn btn-default navbar-btn">
 					<span class="glyphicon glyphicon-home"></span>Home
 				</a>
 				
