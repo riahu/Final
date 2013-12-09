@@ -74,11 +74,14 @@
 			document.querySelector(".rcv-stat").innerHTML = data.rcv;
 			document.getElementById("monster-icon").setAttribute("style","background-image: url(img/"+data.id+".png);");
 			document.getElementById("indexPage").style.display = "none";
+			document.getElementById("preempty").style.display = "block";
+			document.querySelector(".past-evo .panel-body").innerHTML="<div class='list-group-item' id='preempty'><h3>No past evolutions!</h3></div>";
+			document.querySelector(".future-evo .panel-body").innerHTML="<div class='list-group-item' id='evoempty'><h3>No further evolutions!</h3></div>";
 			if (data.prevo.length > 0) {
 				document.getElementById("preempty").style.display = "none";
 				var prevoList = document.querySelector(".past-evo .panel-body")
 				for (var i=0; i < data.prevo.length; ++i) {
-					var template = document.querySelector(".prevo-template").cloneNode(true);
+					var template = document.querySelector(".evo-template").cloneNode(true);
 					template.querySelector("#prev-name").innerHTML = data.prevo[i].name;
 					template.querySelector("#prev-icon").setAttribute("style", "background-image: url(img/"+data.prevo[i].id+".png);");
 					if (data.prevo[i+1]) {
@@ -95,6 +98,36 @@
 					template.className = template.className.replace("template" , "");
 					prevoList.appendChild(template);
 					if (data.prevo[i+1]) {
+						var arrowClone = document.querySelector(".arrow-template").cloneNode(true);
+						arrowClone.className = arrowClone.className.replace("template", "");
+						prevoList.appendChild(arrowClone);
+					}
+				}
+			}
+			if (data.evo.length > 0) {
+				document.getElementById("evoempty").style.display = "none";
+				var prevoList = document.querySelector(".future-evo .panel-body")
+				var current = {
+				
+				}
+				for (var i=0; i < data.evo.length; ++i) {
+					var template = document.querySelector(".evo-template").cloneNode(true);
+					template.querySelector("#prev-name").innerHTML = data.evo[i].name;
+					template.querySelector("#prev-icon").setAttribute("style", "background-image: url(img/"+data.evo[i].id+".png);");
+					if (data.evo[i+1]) {
+						template.querySelector("#current-name").innerHTML = data.evo[i+1].name;
+						template.querySelector("#current-icon").setAttribute("style", "background-image: url(img/"+data.evo[i+1].id+".png);");
+					}
+					else {
+						template.querySelector("#current-name").innerHTML = data.name;
+						template.querySelector("#current-icon").setAttribute("style", "background-image: url(img/"+data.id+".png);");
+					}
+					for (var j=0; j < data.evo[i].mats.length; ++j) {
+						template.querySelector(".mat"+(j+1)).setAttribute("style", "background-image: url(img/"+data.evo[i].mats[j]+".png);");
+					}
+					template.className = template.className.replace("template" , "");
+					prevoList.appendChild(template);
+					if (data.evo[i+1]) {
 						var arrowClone = document.querySelector(".arrow-template").cloneNode(true);
 						arrowClone.className = arrowClone.className.replace("template", "");
 						prevoList.appendChild(arrowClone);
@@ -232,217 +265,95 @@
 		<br>
 		<div class="evo past-evo panel panel-default">
 			<div class="panel-heading"><h3 class="panel-title">Previous Evolutions:</h3></div>
+			<div class="list-group-item template arrow-template">
+				<div class="row">
+					<div class="col col-xs-4 col-sm-2 text-center">
+						<h3><span class="glyphicon glyphicon-arrow-down"></span></h3>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+			<div class="list-group-item template evo-template">
+				<div class="row"> <!-- monster label row -->
+					<div class="col col-xs-4 col-sm-2">
+						<div class="text-box">
+							<div class="text text-center">
+								<h3 id="prev-name">PREV NAME HERE</h3> <!-- previous monster -->
+							</div>
+						</div>
+					</div>
+					<div class="col col-xs-4 text-center col-sm-8">
+						<h3><span class="glyphicon glyphicon-chevron-right"></span></h3>
+					</div>
+					<div class="col col-xs-4 col-sm-2">
+						<div class="text-box">
+							<div class="text text-center">
+								<h3 id="current-name">CURRENT NAME HERE</h3> <!-- current monster -->
+							</div>
+						</div>
+					</div>
+				</div> <!-- end monster label row -->
+				<div class="row"> <!-- monster and material icon row -->
+					<div class="col col-xs-4 col-sm-2">
+						<div class="monster-icon" style="" id="prev-icon"></div> <!-- previous monster -->
+					</div>
+					<div class="col col-xs-4 col-sm-2 col-xs-push-4 col-sm-push-8">
+						<div class="monster-icon" style="" id="current-icon"></div> <!-- current monster -->
+					</div>
+					<div class="col col-xs-4 col-xs-pull-4 visible-xs mat-toggle" data-toggle="collapse" data-target="#materials1">
+						<div class="text-box btn btn-info">
+							<div class="text text-center">
+								Click to see materials
+							</div>
+						</div>
+					</div>
+					<div class="clearfix visible-xs"></div>
+					<div class="col col-sm-8 col-xs-12 col-sm-pull-2">
+						<div class="collapse row materials" id="materials">
+							<div class="col col-sm-1 hidden-xs"></div>
+							<div class="col col-sm-6 col-xs-12">
+								<div class="row">
+									<div class="col col-xs-4">
+										<div class="monster-icon mat1" style=""></div>
+									</div>
+									<div class="col col-xs-4">
+										<div class="monster-icon mat2" style=""></div>
+									</div>
+									<div class="col col-xs-4">
+										<div class="monster-icon mat3" style=""></div>
+									</div>
+								</div>
+							</div>
+							<div class="clearfix visible-xs"></div>
+							<div class="col col-sm-4 col-xs-12">
+								<div class="row">
+									<div class="col col-xs-2 visible-xs"></div>
+									<div class="col col-xs-4 col-sm-6">
+										<div class="monster-icon mat4" style=""></div>
+									</div>
+									<div class="col col-xs-4 col-sm-6">
+										<div class="monster-icon mat5" style=""></div>
+									</div>
+									<div class="col col-xs-2 visible-xs"></div>
+								</div>
+							</div>
+							<div class="col col-sm-1 hidden-xs"></div>
+						</div>
+					</div>
+				</div> <!-- end monster and material icon row -->
+			</div>
 			<div class="panel-body list-group">
 				<div class="list-group-item" id="preempty">
 					<h3>No past evolutions!</h3>
 				</div>
-				<div class="list-group-item arrow-template template">
-					<h3><span class="glyphicon glyphicon-arrow-down"></span></h3>
-				</div>
-				<div class="list-group-item template prevo-template">
-					<div class="row"> <!-- monster label row -->
-						<div class="col col-xs-4 col-sm-2">
-							<div class="text-box">
-								<div class="text text-center">
-									<h3 id="prev-name">PREV NAME HERE</h3> <!-- previous monster -->
-								</div>
-							</div>
-						</div>
-						<div class="col col-xs-4 text-center col-sm-8">
-							<h3><span class="glyphicon glyphicon-chevron-right"></span></h3>
-						</div>
-						<div class="col col-xs-4 col-sm-2">
-							<div class="text-box">
-								<div class="text text-center">
-									<h3 id="current-name">CURRENT NAME HERE</h3> <!-- current monster -->
-								</div>
-							</div>
-						</div>
-					</div> <!-- end monster label row -->
-					<div class="row"> <!-- monster and material icon row -->
-						<div class="col col-xs-4 col-sm-2">
-							<div class="monster-icon" style="" id="prev-icon"></div> <!-- previous monster -->
-						</div>
-						<div class="col col-xs-4 col-sm-2 col-xs-push-4 col-sm-push-8">
-							<div class="monster-icon" style="" id="current-icon"></div> <!-- current monster -->
-						</div>
-						<div class="col col-xs-4 col-xs-pull-4 visible-xs mat-toggle" data-toggle="collapse" data-target="#materials1">
-							<div class="text-box btn btn-info">
-								<div class="text text-center">
-									Click to see materials
-								</div>
-							</div>
-						</div>
-						<div class="clearfix visible-xs"></div>
-						<div class="col col-sm-8 col-xs-12 col-sm-pull-2">
-							<div class="collapse row materials" id="materials">
-								<div class="col col-sm-1 hidden-xs"></div>
-								<div class="col col-sm-6 col-xs-12">
-									<div class="row">
-										<div class="col col-xs-4">
-											<div class="monster-icon mat1" style=""></div>
-										</div>
-										<div class="col col-xs-4">
-											<div class="monster-icon mat2" style=""></div>
-										</div>
-										<div class="col col-xs-4">
-											<div class="monster-icon mat3" style=""></div>
-										</div>
-									</div>
-								</div>
-								<div class="clearfix visible-xs"></div>
-								<div class="col col-sm-4 col-xs-12">
-									<div class="row">
-										<div class="col col-xs-2 visible-xs"></div>
-										<div class="col col-xs-4 col-sm-6">
-											<div class="monster-icon mat4" style=""></div>
-										</div>
-										<div class="col col-xs-4 col-sm-6">
-											<div class="monster-icon mat5" style=""></div>
-										</div>
-										<div class="col col-xs-2 visible-xs"></div>
-									</div>
-								</div>
-								<div class="col col-sm-1 hidden-xs"></div>
-							</div>
-						</div>
-					</div> <!-- end monster and material icon row -->
-				</div>
 			</div>
 		</div> <!-- end past evo -->
 		
-		<div class="evo panel panel-default"> <!-- future evo -->
+		<div class="evo future-evo panel panel-default"> <!-- future evo -->
 			<div class="panel-heading"><h3 class="panel-title">Future Evolution:</h3></div>
 			<div class="panel-body list-group">
-				<div class="list-group-item">
-					<div class="row"> <!-- monster label row -->
-						<div class="col col-xs-4 col-sm-2">
-							<div class="text-box">
-								<div class="text text-center">
-									<h3>Duke Vampire Lord</h3> <!-- current monster -->
-								</div>
-							</div>
-						</div>
-						<div class="col col-xs-4 text-center col-sm-8">
-							<h3><span class="glyphicon glyphicon-chevron-right"></span></h3>
-						</div>
-						<div class="col col-xs-4 col-sm-2">
-							<div class="text-box">
-								<div class="text text-center">
-									<h3>[JAPANESE MONSTER]</h3> <!-- future monster -->
-								</div>
-							</div>
-						</div>
-					</div> <!-- end monster label row -->
-					<div class="row">
-						<div class="col col-xs-4 col-sm-2"><div class="monster-icon" style="background-image: url(img/516.png)"></div></div>
-						<div class="col col-xs-4 col-sm-2 col-xs-push-4 col-sm-push-8"><div class="monster-icon" style="background-image: url(img/894.png)"></div></div>
-						<div class="col col-xs-4 col-xs-pull-4 visible-xs mat-toggle" data-toggle="collapse" data-target="#materials3">
-							<div class="text-box btn btn-info">
-								<div class="text text-center">
-									Click to see materials
-								</div>
-							</div>
-						</div>
-						<div class="clearfix visible-xs"></div>
-						<div class="col col-sm-8 col-xs-12 col-sm-pull-2">
-							<div class="collapse row materials" id="materials3">
-								<div class="col col-sm-1 hidden-xs"></div>
-								<div class="col col-sm-6 col-xs-12">
-									<div class="row">
-										<div class="col col-xs-4">
-											<div class="monster-icon" style="background-image: url(img/151.png)"></div>
-										</div>
-										<div class="col col-xs-4">
-											<div class="monster-icon" style="background-image: url(img/321.png)"></div>
-										</div>
-										<div class="col col-xs-4">
-											<div class="monster-icon" style="background-image: url(img/175.png)"></div>
-										</div>
-									</div>
-								</div>
-								<div class="clearfix visible-xs"></div>
-								<div class="col col-sm-4 col-xs-12">
-									<div class="row">
-										<div class="col col-xs-2 visible-xs"></div>
-										<div class="col col-xs-4 col-sm-6">
-											<div class="monster-icon" style="background-image: url(img/247.png)"></div>
-										</div>
-										<div class="col col-xs-4 col-sm-6">
-											<div class="monster-icon" style="background-image: url(img/251.png)"></div>
-										</div>
-										<div class="col col-xs-2 visible-xs"></div>
-									</div>
-								</div>
-								<div class="col col-sm-1 hidden-xs"></div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="list-group-item">
-					<div class="row"> <!-- monster label row -->
-						<div class="col col-xs-4 col-sm-2">
-							<div class="text-box">
-								<div class="text text-center">
-									<h3>Duke Vampire Lord</h3> <!-- current monster -->
-								</div>
-							</div>
-						</div>
-						<div class="col col-xs-4 text-center col-sm-8">
-							<h3><span class="glyphicon glyphicon-chevron-right"></span></h3>
-						</div>
-						<div class="col col-xs-4 col-sm-2">
-							<div class="text-box">
-								<div class="text text-center">
-									<h3>[JAPANESE MONSTER]</h3> <!-- future monster -->
-								</div>
-							</div>
-						</div>
-					</div> <!-- end monster label row -->
-					<div class="row">
-						<div class="col col-xs-4 col-sm-2"><div class="monster-icon" style="background-image: url(img/516.png)"></div></div>
-						<div class="col col-xs-4 col-sm-2 col-xs-push-4 col-sm-push-8"><div class="monster-icon" style="background-image: url(img/895.png)"></div></div>
-						<div class="col col-xs-4 col-xs-pull-4 visible-xs mat-toggle" data-toggle="collapse" data-target="#materials4">
-							<div class="text-box btn btn-info">
-								<div class="text text-center">
-									Click to see materials
-								</div>
-							</div>
-						</div>
-						<div class="clearfix visible-xs"></div>
-						<div class="col col-sm-8 col-xs-12 col-sm-pull-2">
-							<div class="collapse row materials" id="materials4">
-								<div class="col col-sm-1 hidden-xs"></div>
-								<div class="col col-sm-6 col-xs-12">
-									<div class="row">
-										<div class="col col-xs-4">
-											<div class="monster-icon" style="background-image: url(img/151.png)"></div>
-										</div>
-										<div class="col col-xs-4">
-											<div class="monster-icon" style="background-image: url(img/321.png)"></div>
-										</div>
-										<div class="col col-xs-4">
-											<div class="monster-icon" style="background-image: url(img/247.png)"></div>
-										</div>
-									</div>
-								</div>
-								<div class="clearfix visible-xs"></div>
-								<div class="col col-sm-4 col-xs-12">
-									<div class="row">
-										<div class="col col-xs-2 visible-xs"></div>
-										<div class="col col-xs-4 col-sm-6">
-											<div class="monster-icon" style="background-image: url(img/251.png)"></div>
-										</div>
-										<div class="col col-xs-4 col-sm-6">
-											<div class="monster-icon" style="background-image: url(img/916.png)"></div>
-										</div>
-										<div class="col col-xs-2 visible-xs"></div>
-									</div>
-								</div>
-								<div class="col col-sm-1 hidden-xs"></div>
-							</div>
-						</div>
-					</div>
+				<div class="list-group-item" id="preempty">
+					<h3>No past evolutions!</h3>
 				</div>
 			</div>
 		</div> <!-- end future evo -->
