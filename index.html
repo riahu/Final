@@ -98,7 +98,7 @@
 						template.querySelector("#current-icon").setAttribute("style", "background-image: url(img/"+data.id+".png);");
 						var prevName = data.prevo[i].name;
 						var matlist = data.prevo[i].mats;
-						document.querySelector("#add-button").setAttribute("onclick","add('"+data.name+"',"+data.id+",'"+prevName+"',"+prevId+",["+matlist+"])");
+						document.querySelector("#add-button").setAttribute("onclick","add(\""+data.name+"\","+data.id+",\""+prevName+"\","+prevId+",["+matlist+"])");
 						document.querySelector("#add-button").removeAttribute("disabled");
 					}
 					for (var j=0; j < data.prevo[i].mats.length; ++j) {
