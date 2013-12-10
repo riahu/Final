@@ -2,7 +2,7 @@
 var cart = {items: []};
 
 function removeCartItem(idx) {
-	for (i=0; i < cart.items.length; i++) {
+	for (var i=0; i < cart.items.length; i++) {
 		if (cart.items[i].id === idx) {
 			cart.items.splice(i,1);
 			break;
@@ -65,7 +65,7 @@ function countMaterials(){
 	var prevoList = document.querySelector("#cart-total .panel-body");
 	mats = new Array();
 	for (i=0; i<cart.items.length; ++i){
-		item = cart.items[i];
+		var item = cart.items[i];
 		// getMaterials(item.id, item.previd, matCall);
 		var template = document.querySelector(".cart-row-template").cloneNode(true);
 		template.querySelector("#prev-name").innerHTML = cart.items[i].prevname;
@@ -108,7 +108,7 @@ function countMaterials(){
 	
 	var matTable = document.querySelector("#material-total tbody");
 	matTable.innerHTML = "<tr class='mat-total-row template'><td><div class='monster-icon'></div></td><td><h3></h3></td></tr>";
-	for(i=0; i<mats.length; ++i){
+	for(var i=0; i<mats.length; ++i){
 		if(mats[i] != null){
 			//create new element for material
 			var template = document.querySelector(".mat-total-row").cloneNode(true);
@@ -123,7 +123,7 @@ function countMaterials(){
 }
 
 function matCall(data){
-	for(j=0; j<data.materials.length; ++j){
+	for(var j=0; j<data.materials.length; ++j){
 		var t = data.materials[j].id;
 		if(mats[t] == null){
 			mats[t] = {
