@@ -26,6 +26,8 @@ function add(namex, idx, prevnamex, previdx, matsx){
 	cart.items.push(cItem);
 	
 	buildCart();
+	
+	alert("" + namex + " added to cart!");
 }
 		
 function totalCart() {
@@ -111,6 +113,8 @@ function countMaterials(){
 			//create new element for material
 			var template = document.querySelector(".mat-total-row").cloneNode(true);
 			template.querySelector(".monster-icon").setAttribute("style", "background-image: url(img/"+mats[i].id+".png);");
+			template.querySelector(".monster-icon").appendChild(document.querySelector(".monster-link").cloneNode(false));
+			template.querySelector(".monster-link").setAttribute("onclick","displayDetails("+mats[i].id+")");
 			template.querySelector("h3").innerHTML = "x " + mats[i].count;
 			template.className = template.className.replace("template" , "");
 			matTable.appendChild(template);
